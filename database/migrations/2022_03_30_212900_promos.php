@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Questions extends Migration
+class Promos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class Questions extends Migration
      */
     public function up()
     {
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::create('promos', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->boolean('is_required');
-            $table->string('answers');
-            $table->integer('order');
+            $table->string('image');
+            $table->string('price');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +30,6 @@ class Questions extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions');
+        Schema::dropIfExists('promos');
     }
 }

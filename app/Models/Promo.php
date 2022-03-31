@@ -5,20 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class Promo extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
-    
     protected $fillable = [
         'title',
         'description',
-        'answers',
-        'is_required',
-        'order'
+        'image',
+        'price'
     ];
-
-
-
 }

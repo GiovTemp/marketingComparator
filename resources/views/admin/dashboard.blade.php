@@ -16,8 +16,28 @@
 
                     {{ __('You are logged in!') }}
 
-                    <a href="/createQuestion">Create Question</a>
-                    <a href="/insertPromo">Insert Promo</a>
+                    <br>
+
+                    <a href="/admin/createQuestion">Aggiugi Domanda</a>
+                    <a href="/admin/insertPromo">Inserisci Offerta</a>
+
+                    <br><br>
+
+                    Lista Domande
+
+                    @foreach ($questions as $q)
+                    <br>
+                        {{ $q->id }}
+                        {{ $q->title }}
+                        {{ $q->description }}
+                        {{ $q->is_required }}
+                        <button><a href="{{ url('/admin/viewQuestion/?id='.$q->id) }}">View</a></button>
+                        <button><a href="{{ url('/admin/editQuestion/?id='.$q->id) }}">Edit</a></button>
+                        <button><a href="{{ url('/admin/deleteQuestion/?id='.$q->id) }}">Delete</a></button>
+                        <button><a href="{{route('upQuestion',[$q->id,$q->order])}}">Up</a></button>
+                        <button><a href="{{route('downQuestion',[$q->id,$q->order])}}">Down</a></button>
+                             
+                    @endforeach
 
                 </div>
             </div>

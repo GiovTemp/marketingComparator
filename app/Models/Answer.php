@@ -5,20 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class Answer extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
-    
     protected $fillable = [
-        'title',
-        'description',
-        'answers',
-        'is_required',
-        'order'
+        'name',
+        'surname',
+        'iva',
+        'cf',
+        'results'
     ];
-
-
-
 }
