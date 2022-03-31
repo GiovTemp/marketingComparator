@@ -25,10 +25,10 @@ Route::prefix('admin')->group(function () {
         Route::get('/', 'index');
         Route::get('/createQuestion', 'showCreateQuestion');
         Route::post('/createQuestion', 'createQuestion');
-        Route::get('/deleteQuestion/{id}', 'deleteQuestion');
-        Route::get('/editQuestion/{id}', 'showEditQuestion');
+        Route::get('/deleteQuestion/id={id}', 'deleteQuestion')->name('deleteQuestion');
+        Route::get('/editQuestion/id={id}', 'showEditQuestion')->name('editQuestion');
         Route::post('/editQuestion', 'editQuestion');
-        Route::get('/viewQuestion/{id}', 'showViewQuestion');
+        Route::get('/viewQuestion/id={id}', 'showViewQuestion')->name('viewQuestion');
         Route::get('/upQuestion/id={id}&pos={pos}', 'upQuestion')->name('upQuestion');
         Route::get('/downQuestion/id={id}&pos={pos}', 'downQuestion')->name('downQuestion');
     });

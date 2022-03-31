@@ -80,32 +80,40 @@ class AdminController extends Controller
      * @return void
      */
 
-    public function deleteQuestion(Request $data){
+    public function deleteQuestion($id){
 
-        Question::find($data->id)->delete();
+        $questionToDelete= Question::find($id);//->delete();
+        Question::where('order','>',$questionToDelete->order)->decrement('order');
+        $questionToDelete->delete();        
         
-        //TODO aggiornare l'ordine
-
     }
 
 
-    public function upQuestion($id,$pos){            
+    public function upQuestion($id,$pos){  
         
-        Question::where('order',$pos-1)->increment('order');
-        Question::find($id)->decrement('order'); 
+        $questionToIncrement = Question::where('order',$pos-1)->first();
         
-        //TODO controlli first and last      
-       
+        if($questionToIncrement!=null){
+            $questionToIncrement->increment('order');
+            Question::find($id)->decrement('order'); 
+        }else{
+            dd('prima domanda');
+        }     
+
     }
 
     public function downQuestion($id,$pos){        
        
-        Question::where('order',$pos+1)->decrement('order');
-        Question::find($id)->increment('order');
 
-         //TODO controlli first and last
-
-    }
+        $questionToDecrement=Question::where('order',$pos+1)->first();
+       
+        if($questionToDecrement!= null){
+            $questionToDecrement->decrement('order');
+            Question::find($id)->increment('order');
+        }else{
+            dd('ultima domanda');
+        }       
+   }
 
     
     /**
@@ -113,8 +121,8 @@ class AdminController extends Controller
      *
      * @return void
      */
-    public function showEditQuestion(Request $request){
-        $question = Question::find($request->id);
+    public function showEditQuestion($id){
+        $question = Question::find($id);
         return view('admin/question/edit',['question' => $question]);
     }
 
