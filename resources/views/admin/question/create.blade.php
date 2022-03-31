@@ -29,6 +29,13 @@ Risposta Obbligatoria<input type="checkbox" id="required" name="is_require" valu
 
 <div id="answerArray"></div>
 
+
+
+<input type="submit"/>
+
+</form>
+
+
 <div class="container1">
     <button class="add_form_field">Aggiungi risposta &nbsp; 
       <span style="font-size:16px; font-weight:bold;">+ </span>
@@ -36,13 +43,6 @@ Risposta Obbligatoria<input type="checkbox" id="required" name="is_require" valu
     <div>Testo : <input type="text" id="text"></div>
     <div>Score : <input type="text" id="score"></div>
 </div>
-
-<input type="submit"/>
-
-</form>
-
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
@@ -56,15 +56,16 @@ $(document).ready(function() {
     $(add_button).click(function(e) {
         e.preventDefault();
         if (x < max_fields) {
-            x++;
+            
             var text = document.getElementById('text').value;
             var score = document.getElementById('score').value;
             var answerJSON={"text":text, "score":score};
             answersArray.push(answerJSON); 
-            $(wrapper).append('<div>'+ text +'--' + score +'<a href="#" class="delete">Delete</a></div>'); //add input box
+            $(wrapper).append('<div id="'+x+'">'+ text +'--' + score +'<a href="#" class="delete">Delete</a></div>'); //add input box
 
             const element = document.getElementById("answerArray");
             element.innerHTML = '<input type="hidden" id="answers" name="answers" value='+JSON.stringify(answersArray)+'>';
+            x++;
         } else {
             alert('You Reached the limits')
         }
@@ -74,8 +75,12 @@ $(document).ready(function() {
     //aggiungere delete risposta tramite hidden input con x-1
     $(wrapper).on("click", ".delete", function(e) {
         e.preventDefault();
+        var position =event.target.parentElement.id;
+        answersArray.splice(1,position);
         $(this).parent('div').remove();
         x--;
+        const element = document.getElementById("answerArray");
+        element.innerHTML = '<input type="hidden" id="answers" name="answers" value='+JSON.stringify(answersArray)+'>';
     })
 });
 </script>

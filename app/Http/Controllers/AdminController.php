@@ -47,6 +47,8 @@ class AdminController extends Controller
      */
     public function createQuestion(Request $request){
 
+        dd($request->all());
+
         if($request->is_required===''){
            $temp=false;
         }else{
