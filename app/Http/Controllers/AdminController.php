@@ -156,7 +156,7 @@ class AdminController extends Controller
      * @return void
      */
     public function showCreatePromo(){
-        return view('admin/question/create');
+        return view('admin/promo/create');
     }
 
 
@@ -170,8 +170,9 @@ class AdminController extends Controller
         $p = new Promo([
             'title' => $request->title,
             'description' => $request->description,
-            'answers' => $request->answers,
-            'is_required' => $temp
+            'score' => $request->score,
+            'price' => $request->price,
+            'image' => $request->imgPromo,
         ]);
 
         $q->save();

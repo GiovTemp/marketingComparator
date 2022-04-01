@@ -31,5 +31,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/viewQuestion/id={id}', 'showViewQuestion')->name('viewQuestion');
         Route::get('/upQuestion/id={id}&pos={pos}', 'upQuestion')->name('upQuestion');
         Route::get('/downQuestion/id={id}&pos={pos}', 'downQuestion')->name('downQuestion');
+
+
+        Route::get('/createPromo', 'showCreatePromo');
+        Route::post('/createPromo', 'createPromo');
     });
 });

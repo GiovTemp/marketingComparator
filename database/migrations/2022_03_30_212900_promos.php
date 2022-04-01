@@ -17,6 +17,7 @@ class Promos extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
+            $table->string('score');
             $table->string('image');
             $table->string('price');
             $table->timestamps();
