@@ -172,7 +172,7 @@ class AdminController extends Controller
             'description' => $request->description,
             'score' => $request->score,
             'price' => $request->price,
-            'image' => $request->imgPromo,
+            'image' => $request->imgPromo
         ]);
 
         $q->save();
