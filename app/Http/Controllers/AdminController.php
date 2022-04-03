@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Question;
 use App\Models\Answer;
+use App\Models\Promo;
+
+use File;
+
 
 class AdminController extends Controller
 
@@ -23,9 +27,10 @@ class AdminController extends Controller
     //
     public function index()
     {
-        $questions = Question::all()->sortBy('order');;
+        $questions = Question::all()->sortBy('order');
+        $promos = Promo::all();
        
-        return view('admin/dashboard',['questions' => $questions]);
+        return view('admin/dashboard',['questions' => $questions,'promos'=>$promos]);
     }
 
 
@@ -47,7 +52,7 @@ class AdminController extends Controller
      */
     public function createQuestion(Request $request){
 
-        dd($request->all());
+        
 
         if($request->is_required===''){
            $temp=false;
@@ -84,7 +89,7 @@ class AdminController extends Controller
 
     public function deleteQuestion($id){
 
-        $questionToDelete= Question::find($id);//->delete();
+        $questionToDelete= Question::find($id);
         Question::where('order','>',$questionToDelete->order)->decrement('order');
         $questionToDelete->delete();        
         
@@ -142,8 +147,8 @@ class AdminController extends Controller
      *
      * @return void
      */
-    public function showViewQuestion(Request $request){
-        $question = Question::find($request->id);
+    public function showViewQuestion($id){
+        $question = Question::find($id);
         return view('admin/question/view',['question' => $question,'answers'=>json_decode($question->answers)]);
     }
 
@@ -166,18 +171,102 @@ class AdminController extends Controller
      * @return void
      */
     public function createPromo(Request $request){
+
         
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+        ]);
+
+        $newImageName = time().'-'.$request->title . '.'.$request->image->extension();
+        
+        self::uploadPhoto($request->image,$newImageName);
+                
         $p = new Promo([
             'title' => $request->title,
             'description' => $request->description,
             'score' => $request->score,
             'price' => $request->price,
-            'image' => $request->imgPromo
+            'image' => $newImageName
         ]);
 
-        $q->save();
+        $p->save();
+        
 
     }
 
+        /**
+     * Show Create new Promo.
+     *
+     * @return void
+     */
+    public function showViewPromo($id){
+        $p = Promo::find($id);
+        return view('admin/promo/view',['promo' => $p]);
+    }
+
+    public function deletePromo($id){
+
+        $promoToDelete= Promo::find($id);
+        $imgPath='images/'.$promoToDelete->image;
+        self::deletePhoto($imgPath);
+        $promoToDelete->delete();  
+
+    }
     
+    
+
+        
+    /**
+     * Show Edit Question.
+     *
+     * @return void
+     */
+    public function showEditPromo($id){
+        $promo = Promo::find($id);
+        return view('admin/promo/edit',['promo' => $promo]);
+    }
+
+        /**
+     * Edit Question.
+     *
+     * @return void
+     */
+    public function EditPromo(Request $request){
+        $promoToEdit= Promo::find($request->id);
+        
+        if($request->hasFile('image')){
+            if($request->image->getClientOriginalName()!==$promoToEdit->image){
+                $imgPath='images/'.$promoToEdit->image;
+                self::deletePhoto($imgPath);
+        
+                $newImageName = time().'-'.$request->title . '.'.$request->image->extension();
+                self::uploadPhoto($request->image,$newImageName);
+                $promoToEdit->image = $newImageName;
+                          
+                
+            }
+        }
+        $promoToEdit->title=$request->title;
+        $promoToEdit->description=$request->description;
+        $promoToEdit->score=$request->score;
+        $promoToEdit->price=$request->price;
+
+        $promoToEdit->update();       
+    }
+    
+
+    public function deletePhoto($imgPath){                
+       
+        if( File::exists(public_path($imgPath)) ) {
+            File::delete(public_path($imgPath));
+        }
+    }
+
+    public function uploadPhoto($image,$newImageName){   
+                   
+        $image->move(public_path('images'), $newImageName);
+    }
+
 }

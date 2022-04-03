@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/questions', [App\Http\Controllers\HomeController::class, 'showQuestions'])->name('questions');
+
+Route::post('/getPromo', [App\Http\Controllers\HomeController::class, 'getPromo']);
 
 
 Route::prefix('admin')->group(function () {
@@ -32,6 +32,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/upQuestion/id={id}&pos={pos}', 'upQuestion')->name('upQuestion');
         Route::get('/downQuestion/id={id}&pos={pos}', 'downQuestion')->name('downQuestion');
 
+
+        Route::get('/viewPromo/id={id}', 'showViewPromo')->name('viewPromo');
+        Route::get('/deletePromo/id={id}', 'deletePromo')->name('deletePromo');
+        Route::get('/editPromo/id={id}', 'showEditPromo')->name('editPromo');
+        Route::post('/editPromo', 'editPromo');
 
         Route::get('/createPromo', 'showCreatePromo');
         Route::post('/createPromo', 'createPromo');

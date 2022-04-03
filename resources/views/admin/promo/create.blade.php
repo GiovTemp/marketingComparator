@@ -1,4 +1,4 @@
-<form method="POST" action="/admin/createPromo">
+<form method="POST" action="/admin/createPromo" enctype="multipart/form-data">
 @csrf
 <label for="title">Nome Promo</label>
  
@@ -24,12 +24,12 @@
 @error('description')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
-
+<br><br>
 <label for="score">Score Promo</label>
  
 <input id="score"
     type="text"
-    name="description"
+    name="score"
     class="@error('score') is-invalid @enderror">
 
     
@@ -37,21 +37,35 @@
 @error('score')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
+<br><br>
 
-<label for="imgPromo">Immagine Promo</label>
+<label for="price">Price Promo</label>
  
-<input id="imgPromo"
-    type="file"
-    name="imgPromo"
-    class="@error('imgPromo') is-invalid @enderror">
+<input id="price"
+    type="text"
+    name="price"
+    class="@error('price') is-invalid @enderror">
 
     
  
-@error('description')
+@error('price')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+<br><br>
+<label for="image">Immagine Promo</label>
+ 
+<input id="image"
+    type="file"
+    name="image"
+    class="@error('image') is-invalid @enderror">
+
+    
+ 
+@error('image')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
 
-
+<br><br>
 <input type="submit"/>
 
 </form>

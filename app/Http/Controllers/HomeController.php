@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Question;
+
 
 class HomeController extends Controller
 {
@@ -13,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        
     }
 
     /**
@@ -24,5 +26,15 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function showQuestions()
+    {
+        $questions = Question::all()->sortBy('order');
+        return view('questions',['questions' => $questions]);
+    }
+
+    public function getPromo(Request $request){
+        dd($request->all());
     }
 }
