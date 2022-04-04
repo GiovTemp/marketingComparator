@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Question;
+use DB;
 
 
 class HomeController extends Controller
@@ -36,7 +37,26 @@ class HomeController extends Controller
 
     public function getPromo(Request $request){
 
-        dd($request->all());
+        $result = $request->all();
+        $n = sizeof($result);
+        $score = 0;
+        $i=1;
+        while($i<$n){
+
+            $temp= explode('|',$result[$i]);
+            $score = $score+$temp[1];
+            $i++;
+
+        }
+
+        $promos = DB::table('promos')
+            ->select('*', DB::raw("(score - $score) AS column_to_be_order"))
+            ->orderBy('column_to_be_order')
+            ->get();
+
+            
+        dd($promos['0']);
+
        
     }
 }
