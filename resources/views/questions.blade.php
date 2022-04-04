@@ -28,7 +28,7 @@
     <br>
     @foreach (json_decode($q->answers, true) as $a)
 
-    <input type="radio" value= {{ $loop->index }} name={{$q->id}}>{{$a['text']}}<br>
+    <input type="radio" value={{ $loop->index }}|{{$a['score']}} name={{$q->id}}>{{$a['text']}}<br>
     
     @endforeach
     

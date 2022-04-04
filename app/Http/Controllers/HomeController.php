@@ -35,6 +35,8 @@ class HomeController extends Controller
     }
 
     public function getPromo(Request $request){
+
         dd($request->all());
+       
     }
 }
