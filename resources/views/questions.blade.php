@@ -13,10 +13,11 @@
  <h1>Online Application</h1>
 <section>
   <p>Personal information</p>
-  <input type="text" placeholder="Nome" />
-  <input type="text" placeholder="Cognome" />
-  <input type="text" placeholder="P.IVA" />
-  <input type="text" placeholder="CF" />  
+  <input type="text" required name="name" placeholder="Nome" />
+  <input type="text" required name="surname" placeholder="Cognome" />
+  <input type="text" required name="email" placeholder="Email" />
+  <input type="text" required name="iva" placeholder="P.IVA" />
+  <input type="text" required name="cf" placeholder="CF" />  
 </section>
 
 
@@ -28,7 +29,7 @@
     <br>
     @foreach (json_decode($q->answers, true) as $a)
 
-    <input type="radio" value={{ $loop->index }}|{{$a['score']}} name={{$q->id}}>{{$a['text']}}<br>
+    <input type="radio" required value={{ $loop->index }}|{{$a['score']}} name={{$q->id}}>{{$a['text']}}<br>
     
     @endforeach
     
@@ -40,7 +41,7 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </section>
 
-  <div class="button" id="prev">&larr; Previous</div>
+<div class="button" id="prev">&larr; Previous</div>
 <div class="button" id="next">Next &rarr;</div>
 <div class="button" onClick="document.forms['promo-form'].submit();" id="submit">Ottieni Preventivo</div>
 

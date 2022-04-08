@@ -14,6 +14,8 @@ class Answer extends Model
         'surname',
         'iva',
         'cf',
-        'results'
+        'email',
+        'results',
+        'id_promo'
     ];
 }

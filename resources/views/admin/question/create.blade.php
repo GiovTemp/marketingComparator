@@ -1,3 +1,7 @@
+@extends('layouts.appAdmin')
+
+@section('content')
+
 <form method="POST" action="/admin/createQuestion">
 @csrf
 <label for="title">Testo domanda</label>
@@ -25,7 +29,6 @@
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
 
-Risposta Obbligatoria<input type="checkbox" id="required" name="is_require" value="true">
 
 <div id="answerArray"></div>
 
@@ -84,3 +87,6 @@ $(document).ready(function() {
     })
 });
 </script>
+
+
+@endsection

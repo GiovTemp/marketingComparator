@@ -19,6 +19,8 @@ Route::get('/questions', [App\Http\Controllers\HomeController::class, 'showQuest
 
 Route::post('/getPromo', [App\Http\Controllers\HomeController::class, 'getPromo']);
 
+Route::post('/requestEstimate', [App\Http\Controllers\HomeController::class, 'requestEstimate']);
+
 
 Route::prefix('admin')->group(function () {
     Route::controller(App\Http\Controllers\AdminController::class)->group(function () {
@@ -40,5 +42,8 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/createPromo', 'showCreatePromo');
         Route::post('/createPromo', 'createPromo');
+
+        Route::get('/estimateRequest', 'listRequests');
+        Route::get('/deleteAnswer/id={id}', 'deleteAnswer')->name('deleteAnswer');
     });
 });

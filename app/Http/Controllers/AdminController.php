@@ -51,14 +51,6 @@ class AdminController extends Controller
      * @return void
      */
     public function createQuestion(Request $request){
-
-        
-
-        if($request->is_required===''){
-           $temp=false;
-        }else{
-            $temp=true;
-        }
         
         $order = Question::max('order');
         
@@ -73,7 +65,7 @@ class AdminController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'answers' => $request->answers,
-            'is_required' => $temp,
+            'is_required' => true,
             'order' => $order
         ]);
 
@@ -267,6 +259,30 @@ class AdminController extends Controller
     public function uploadPhoto($image,$newImageName){   
                    
         $image->move(public_path('images'), $newImageName);
+    }
+
+
+    public function listRequests(){
+        $a = Answer::all()->sortBy('created_at');
+        $i=0;
+        while($i<sizeof($a)){
+            $p = Promo::find($a[$i]->id_promo);
+            if($p!==null){
+                $a[$i]->name_promo = $p->title;
+            }else{
+                $a[$i]->name_promo = "Promo non trovata";
+                $a[$i]->id_promo = null;
+            }
+
+
+            $i++;
+        }       
+               
+        return view('admin/estimate/list',['requests' => $a]);
+    }
+
+    public function deleteAnswer($id){
+        Answer::find($id)->delete();
     }
 
 }

@@ -19,7 +19,10 @@ class Answers extends Migration
             $table->string('surname');
             $table->string('iva');
             $table->string('cf');
+            $table->string('email');
             $table->string('results');
+            $table->integer('id_promo');
+            $table->timestamps();
         });
     }
 
