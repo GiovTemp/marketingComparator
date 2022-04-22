@@ -10,9 +10,12 @@
 @csrf
 <div id="svg_wrap"></div>
 
- <h1>Online Application</h1>
+
 <section>
-  <p>Personal information</p>
+<h1>Ottieni adesso l'offerta perfetta!</h1><br>
+<p>Rispondi alle seguenti domande e il nostro algoritmo troverà l'offerta <b>su misura per te</b></p>
+<hr>
+  <p>Informazioni personali</p>
   <input type="text" required name="name" placeholder="Nome" />
   <input type="text" required name="surname" placeholder="Cognome" />
   <input type="text" required name="email" placeholder="Email" />
@@ -23,13 +26,13 @@
 
 @foreach ($questions as $q)
 <section>
-    {{$q->title}}
+<h1>{{$q->title}}</h1>
     <br>
-    {{$q->description}}
-    <br>
+    <h3>{{$q->description}}</h3>
+    <hr>
     @foreach (json_decode($q->answers, true) as $a)
 
-    <input type="radio" required value={{ $loop->index }}|{{$a['score']}} name={{$q->id}}>{{$a['text']}}<br>
+    <input type="radio" required value={{ $loop->index }}|{{$a['score']}} name={{$q->id}}> {{$a['text']}}<br>
     
     @endforeach
     
@@ -37,8 +40,13 @@
 @endforeach
 
 <section>
-  <p>General condtitions</p>
+<h1>Condizioni Generali</h1>
+<hr>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
 </section>
 
 <div class="button" id="prev">&larr; Previous</div>
@@ -47,7 +55,7 @@
 
 </form>
 
-
+<br><br>
 
 
 @endsection

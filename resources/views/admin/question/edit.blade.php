@@ -1,58 +1,66 @@
-<form method="POST" action="/admin/editQuestion">
-@csrf
-<label for="title">Testo domanda</label>
-<input 
-    type="hidden"
-    name="id"
-     value={{ $question->id }}>
+@extends('layouts.appAdmin')
 
-<input id="title"
-    type="text"
-    name="title"
-    class="@error('title') is-invalid @enderror"
-    value={{ $question->title }}>
- 
-@error('title')
-    <div class="alert alert-danger">{{ $message }}</div>
-@enderror
-<br><br>
+@section('content')
 
-<label for="description">Descrizione Domanda</label>
- 
-<input id="description"
-    type="text"
-    name="description"
-    class="@error('description') is-invalid @enderror"
-    value={{ $question->description }}>
+<div class="container-fluid py-4">
+      <div class="row mt-4">
+        <div class="col-lg-12 mb-lg-0 mb-4">
+          <div class="card z-index-2 h-100">
+            <div class="card-header pb-0 pt-3 bg-transparent">
+              <h6 class="text-capitalize">Edit Questions</h6>
+            </div>
+            <div class="card-body p-3">
+              <form method="POST" action="/admin/createQuestion">
+              <div id="answerArray">
+                  </div>
+                @csrf
+                <button type="submit" class="btn btn-primary" style="background-color: green;">Crea Domada</button>
+                <div class="form-group">
+                    <label for="title">Testo domanda</label>
+                    <input id="title" type="text" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Insersci testo domanda" value={{ $question->title }} >
+                    @error('title')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
 
-    
- 
-@error('description')
-    <div class="alert alert-danger">{{ $message }}</div>
-@enderror
+                <div class="form-group">
+                    <label for="description">Descrizone Domanda</label>
+                    <input class="form-control @error('description') is-invalid @enderror" id="description" type="text" name="description" placeholder="Inserisci descrizione" value={{ $question->description }} >
+                    @error('description')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                        <label for="text">Testo risposta</label>
+                        <input type="text" class="form-control" id="text" placeholder="Insersci testo della risposta">
+                    </div>
+                    <div class="form-group">
+                        <label for="score">Score Risposta</label>
+                        <input type="score" class="form-control" id="score" placeholder="Insersci punteggio risposta">
+                    </div>
+                </div>              
+                    
+                <button type="submit" class="add_form_field btn btn-primary"style="background-color:#5e72e4;">Inserisci Risposta</button>
+                
 
-Risposta Obbligatoria
-@if($question->is_required)  
-    <input type="checkbox" id="required" name="is_require" value="true" checked >
-@else
-    <input type="checkbox" id="required" name="is_require" value="true" >
-@endif
+                <div class="container1">
+                    
 
-<div id="answerArray"></div>
+                <div class="table-responsive">
+                  Lista Risposte
+                  <table class="table align-items-center ">
+                    <tbody>
+              
+                    </tbody>
+                  </table>
 
-<div class="container1">
-    <button class="add_form_field">Aggiungi risposta &nbsp; 
-      <span style="font-size:16px; font-weight:bold;">+ </span>
-    </button>
-    <div>Testo : <input type="text" id="text"></div>
-    <div>Score : <input type="text" id="score"></div>
-</div>
-
-<input type="submit" value="Modifica"/>
-
-</form>
-
-
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -106,3 +114,4 @@ $(document).ready(function() {
 });
 </script>
 
+@endsection

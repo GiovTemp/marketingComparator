@@ -16,10 +16,12 @@ class Promos extends Migration
         Schema::create('promos', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
+            $table->longText('description');
             $table->string('score');
             $table->string('image');
             $table->string('price');
+            $table->string('promoMessage')->nullable();
+            $table->boolean('isPremium')->default(false);
             $table->timestamps();
         });
     }

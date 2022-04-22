@@ -11,8 +11,10 @@
             </div>
             <div class="card-body p-3">
               <form method="POST" action="/admin/createQuestion">
+              <div id="answerArray">
+                  </div>
                 @csrf
-
+                <button type="submit" class="btn btn-primary" style="background-color: green;">Crea Domada</button>
                 <div class="form-group">
                     <label for="title">Testo domanda</label>
                     <input id="title" type="text" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Insersci testo domanda">
@@ -28,9 +30,7 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
-
-                <div class="container1">
-                    <div class="form-group">
+                <div class="form-group">
                         <label for="text">Testo risposta</label>
                         <input type="text" class="form-control" id="text" placeholder="Insersci testo della risposta">
                     </div>
@@ -38,54 +38,23 @@
                         <label for="score">Score Risposta</label>
                         <input type="score" class="form-control" id="score" placeholder="Insersci punteggio risposta">
                     </div>
-                </div>
-
+                </div>              
+                    
+                <button type="submit" class="add_form_field btn btn-primary"style="background-color:#5e72e4;">Inserisci Risposta</button>
                 
- 
 
-       
-                   
-                      <button type="submit" class="add_form_field btn btn-primary"style="background-color:#5e72e4;">Inserisci Risposta</button>
-                      <button type="submit" class="btn btn-primary" style="background-color: green;">Crea Domada</button>
+                <div class="container1">
+                    
 
-                      <div class="table-responsive">
-              <table class="table align-items-center ">
-                <tbody>
-
-               
-                <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0"> Testo Risposta </p>
-                          <h6 class="text-sm mb-0"></h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Score</p>
-                        
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Azioni</p>
-                        
-                      </div>
-                    </td>
-      
-
-                  </tr>
-
-                <div id="answerArray">
+                <div class="table-responsive">
+                  Lista Risposte
+                  <table class="table align-items-center ">
+                    <tbody>
+              
+                    </tbody>
+                  </table>
 
                 </div>
-                  
-
-                </tbody>
-              </table>
-            </div>
               </form>
             </div>
           </div>
@@ -105,33 +74,43 @@ $(document).ready(function() {
     var x = 0;
     $(add_button).click(function(e) {
         e.preventDefault();
-        if (x < max_fields) {
-            
-            var text = document.getElementById('text').value;
-            var score = document.getElementById('score').value;
-            var answerJSON={"text":text, "score":score};
-            answersArray.push(answerJSON); 
-            $(wrapper).append('<div id="'+x+'"><tr> <td class="w-30"> <div class="d-flex px-2 py-1 align-items-center"> <div class="ms-4"> <p class="text-xs font-weight-bold mb-0"> Testo Risposta </p><h6 class="text-sm mb-0"></h6> </div></div></td><td> <div class="text-center"> <p class="text-xs font-weight-bold mb-0">Score</p></div></td><td> <div class="text-center"> <p class="text-xs font-weight-bold mb-0">Azioni</p></div></td></tr><a href="#" class="delete">Delete</a></div>'); //add input box
+          var text = document.getElementById('text').value;
+          var score = document.getElementById('score').value;
+          var answerJSON={"id":x, "text":text, "score":score};
+          answersArray.push(answerJSON); 
+          $(wrapper).append('<tr id="'+x+'"><td class="w-30"> <div class="d-flex px-2 py-1 align-items-center"> <div class="ms-4"> <p class="text-xs font-weight-bold mb-0">Testo risposta</p><h6 class="text-sm mb-0">'+text+'</h6> </div></div></td><td> <div class="text-center"> <p class="text-xs font-weight-bold mb-0">Score</p><h6 class="text-sm mb-0">'+score+'</h6> </div></td><td class="align-middle text-sm"> <div class="col text-center" id="'+x+'"> <button type="button" class="delete btn btn-primary" style="background-color: red;" >Delete</button> </div></td></tr>'); //add input box
 
-            const element = document.getElementById("answerArray");
-            element.innerHTML = '<input type="hidden" id="answers" name="answers" value='+JSON.stringify(answersArray)+'>';
-            x++;
-        } else {
-            alert('You Reached the limits')
-        }
+          const element = document.getElementById("answerArray");
+          var object = JSON.stringify(answersArray);
+          var data = object.replaceAll( " ","\\/");
+          element.innerHTML = '<input type="hidden" id="answers" name="answers" value='+data+'>';
+          
+          x++;
+        
     });
 
 
     //aggiungere delete risposta tramite hidden input con x-1
-    $(wrapper).on("click", ".delete", function(e) {
+    $(wrapper).on("click", ".delete", function(e) {        
         e.preventDefault();
-        var position =event.target.parentElement.id;
-        answersArray.splice(1,position);
-        $(this).parent('div').remove();
-        x--;
+        var id =event.target.parentElement.id;
+        findAndRemove(answersArray, 'id', parseInt(id));
+        document.getElementById(id).remove();
+
         const element = document.getElementById("answerArray");
         element.innerHTML = '<input type="hidden" id="answers" name="answers" value='+JSON.stringify(answersArray)+'>';
+
+        console.log(JSON.stringify(answersArray));
     })
+
+    function findAndRemove(array, property, value) {
+      array.forEach(function(result, index) {
+        if(result[property] === value) {     
+        array.splice(index, 1);
+        }    
+      });
+    }
+
 });
 </script>
 

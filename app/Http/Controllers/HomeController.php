@@ -39,19 +39,20 @@ class HomeController extends Controller
     public function getPromo(Request $request){
 
         $result = $request->all();
-        $n = sizeof($result) - 5;
+        $n = sizeof($result) - 4;
         $score = 0;
         $i=1;
         $answers = [];
-        
+       
         while($i<$n){
 
-            
-            $temp= explode('|',$result[$i]);
-            $score = $score+$temp[1];
-
-            array_push($answers,array('question_id' => $i,'answer_id' => $temp[0]));
-            
+            if(isset($result[$i])){
+                
+                $temp= explode('|',$result[$i]);
+                $score = $score+$temp[1];
+                    array_push($answers,array('question_id' => $i,'answer_id' => $temp[0]));
+               }
+           
             $i++;
 
         }
@@ -59,7 +60,7 @@ class HomeController extends Controller
       
         //get Promos
         $promos = DB::table('promos')
-            ->select('*', DB::raw("(score - $score) AS column_to_be_order"))
+            ->select('*', DB::raw("Abs(score - $score) AS column_to_be_order"))
             ->orderBy('column_to_be_order')
             ->get();        
         
@@ -67,7 +68,6 @@ class HomeController extends Controller
        
         $result['answers'] = json_encode($answers);
       
-        
         return view('listResultsPromo',['promos' => $promos,'results' => json_encode($result)]);
 
 
@@ -93,5 +93,6 @@ class HomeController extends Controller
         ]);
           
         $a->save();
+        return view('estimate',['message'=>'Richiesta inviata correttamente!']);
     }
 }

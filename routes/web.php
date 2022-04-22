@@ -40,6 +40,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/editPromo/id={id}', 'showEditPromo')->name('editPromo');
         Route::post('/editPromo', 'editPromo');
 
+        Route::get('/premiumPromo/id={id}', 'premiumPromo')->name('premiumPromo');
+
         Route::get('/createPromo', 'showCreatePromo');
         Route::post('/createPromo', 'createPromo');
 

@@ -9112,6 +9112,7 @@ fieldset:disabled .btn {
 
 .mt-4 {
   margin-top: 1.5rem !important;
+  
 }
 
 .mt-5 {
@@ -10264,7 +10265,7 @@ fieldset:disabled .btn {
 }
 
 .bg-primary {
-  background-color: #ddaf27 !important;
+  background-color: #4c6ef8 !important;
 }
 
 .bg-secondary {
@@ -10308,7 +10309,7 @@ fieldset:disabled .btn {
 }
 
 .bg-gray-100 {
-  background-color: #f8f9fa !important;
+  background-color: #f0f0f0 !important;
 }
 
 .bg-gray-200 {

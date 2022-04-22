@@ -8,6 +8,7 @@ use App\Models\Answer;
 use App\Models\Promo;
 
 use File;
+use Illuminate\Support\Str;
 
 
 class AdminController extends Controller
@@ -29,8 +30,9 @@ class AdminController extends Controller
     {
         $questions = Question::all()->sortBy('order');
         $promos = Promo::all();
+        $premium= Promo::where('isPremium',true)->first();
        
-        return view('admin/dashboard',['questions' => $questions,'promos'=>$promos]);
+        return view('admin/dashboard',['questions' => $questions,'promos'=>$promos,'premium'=>$premium]);
     }
 
 
@@ -51,6 +53,8 @@ class AdminController extends Controller
      * @return void
      */
     public function createQuestion(Request $request){
+        $request->answers = Str::replaceArray('\/', [' '],   $request->answers);
+      
         
         $order = Question::max('order');
         
@@ -71,6 +75,7 @@ class AdminController extends Controller
 
         $q->save();
 
+        return redirect('/admin');
     }
 
     /**
@@ -83,7 +88,8 @@ class AdminController extends Controller
 
         $questionToDelete= Question::find($id);
         Question::where('order','>',$questionToDelete->order)->decrement('order');
-        $questionToDelete->delete();        
+        $questionToDelete->delete();  
+        return redirect('/admin');      
         
     }
 
@@ -97,7 +103,8 @@ class AdminController extends Controller
             Question::find($id)->decrement('order'); 
         }else{
             dd('prima domanda');
-        }     
+        }
+        return redirect('/admin');     
 
     }
 
@@ -111,7 +118,8 @@ class AdminController extends Controller
             Question::find($id)->increment('order');
         }else{
             dd('ultima domanda');
-        }       
+        }
+        return redirect('/admin');       
    }
 
     
@@ -131,7 +139,8 @@ class AdminController extends Controller
      * @return void
      */
     public function EditQuestion(Request $request){
-        Question::find($request->id)->update($request->all());       
+        Question::find($request->id)->update($request->all());
+        return redirect('/admin');       
     }
 
         /**
@@ -183,7 +192,14 @@ class AdminController extends Controller
             'image' => $newImageName
         ]);
 
+        if(isset($request->promoMessage)){
+        
+            $p->promoMessage = $request->promoMessage;
+        }
+
         $p->save();
+
+        return redirect('/admin');
         
 
     }
@@ -203,7 +219,26 @@ class AdminController extends Controller
         $promoToDelete= Promo::find($id);
         $imgPath='images/'.$promoToDelete->image;
         self::deletePhoto($imgPath);
-        $promoToDelete->delete();  
+        $promoToDelete->delete();
+        return redirect('/admin');  
+
+    }
+
+    
+    public function premiumPromo($id){
+
+        $promoToEdit= Promo::where('isPremium',true)->first();
+
+        if($promoToEdit!=null){
+            $promoToEdit->isPremium=false;
+            $promoToEdit->update();
+        }
+
+        $promoToEdit= Promo::find($id);
+        $promoToEdit->isPremium=true;
+        $promoToEdit->update();
+
+        return redirect('/admin');  
 
     }
     
@@ -245,7 +280,8 @@ class AdminController extends Controller
         $promoToEdit->score=$request->score;
         $promoToEdit->price=$request->price;
 
-        $promoToEdit->update();       
+        $promoToEdit->update();  
+        return redirect('/admin');     
     }
     
 
@@ -283,6 +319,7 @@ class AdminController extends Controller
 
     public function deleteAnswer($id){
         Answer::find($id)->delete();
+        return redirect('/admin/estimateRequest');
     }
 
 }
