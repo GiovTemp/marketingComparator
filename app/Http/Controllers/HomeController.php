@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Question;
 use App\Models\Answer;
+use App\Models\Section;
 use DB;
 
 
@@ -30,9 +31,9 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function showQuestions()
+    public function showQuestions($id)
     {
-        $questions = Question::all()->sortBy('order');
+        $questions = Question::where('id_section',$id)->orderBy('order')->get();
         return view('questions',['questions' => $questions]);
     }
 
@@ -94,5 +95,11 @@ class HomeController extends Controller
           
         $a->save();
         return view('estimate',['message'=>'Richiesta inviata correttamente!']);
+    }
+
+
+    public function showSections(){
+        $sections = Section::all();
+        return view('section',['sections' => $sections]);
     }
 }

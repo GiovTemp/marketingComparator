@@ -177,6 +177,7 @@
    
     <script src="{{ URL::asset('homeAssets/assets/vendors/js/glightbox.min.js') }}"></script>
 
+    <script src="{{ mix('/js/app.js') }}"></script>
      <script src="{{ URL::asset('homeAssets/assets/vendors/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>

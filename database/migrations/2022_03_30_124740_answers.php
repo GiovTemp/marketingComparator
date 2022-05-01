@@ -22,6 +22,7 @@ class Answers extends Migration
             $table->string('email');
             $table->string('results');
             $table->integer('id_promo');
+            $table->integer('id_section');
             $table->timestamps();
         });
     }

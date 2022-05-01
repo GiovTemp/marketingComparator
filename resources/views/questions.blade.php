@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="css/multi-form.css">
+<link rel="stylesheet" href="../css/multi-form.css">
 @endsection
 
 @section('content')
@@ -21,6 +21,7 @@
   <input type="text" required name="email" placeholder="Email" />
   <input type="text" required name="iva" placeholder="P.IVA" />
   <input type="text" required name="cf" placeholder="CF" />  
+  <input type="text" required name="city" placeholder="Città" /> 
 </section>
 
 
@@ -32,12 +33,24 @@
     <hr>
     @foreach (json_decode($q->answers, true) as $a)
 
-    <input type="radio" required value={{ $loop->index }}|{{$a['score']}} name={{$q->id}}> {{$a['text']}}<br>
+    <input type="radio" value={{ $loop->index }}|{{$a['score']}} name={{$q->id}}> {{$a['text']}}<br>
     
     @endforeach
     
 </section>
 @endforeach
+
+<section>
+<h1>Ottieni adesso l'offerta perfetta!</h1><br>
+<p>Rispondi alle seguenti domande e il nostro algoritmo troverà l'offerta <b>su misura per te</b></p>
+<hr>
+  <p>Dettagli richiesta</p>
+  <textarea  name="details" placeholder="Dettagli" cols="150" ></textarea>
+
+  <hr>
+  <p>Descrivi quello di cui hai bisogno, aggiungi informazioni utili</p>
+  <textarea  name="info" placeholder="Informazioni utili" cols="150"></textarea>
+</section>
 
 <section>
 <h1>Condizioni Generali</h1>
@@ -63,6 +76,6 @@
 
 @section('js')
 
-<script src="js/multi-form.js"></script>
+<script src="../js/multi-form.js"></script>
 
 @endsection

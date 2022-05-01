@@ -19,9 +19,10 @@ class Promos extends Migration
             $table->longText('description');
             $table->string('score');
             $table->string('image');
-            $table->string('price');
+            $table->longText('price');
             $table->string('promoMessage')->nullable();
             $table->boolean('isPremium')->default(false);
+            $table->integer('id_section');
             $table->timestamps();
         });
     }

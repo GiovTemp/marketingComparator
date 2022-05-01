@@ -19,6 +19,7 @@
   <link href="{{ URL::asset('adminAssets/assets/css/nucleo-svg.css') }}" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="{{ URL::asset('adminAssets/assets/css/argon-dashboard.css?v=2.0.2') }}" rel="stylesheet" />
+  <link id="pagestyle" href="{{ URL::asset('adminAssets/assets/css/formulate.css') }}" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -42,19 +43,11 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/admin/createQuestion">
+          <a class="nav-link " href="/admin/createSection">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="fa fa-plus text-warning text-sm opacity-10"></i>
+            <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Aggiungi Domanda</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="/admin/createPromo">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Inserisci Offerta</span>
+            <span class="nav-link-text ms-1">Aggiungi Sezione</span>
           </a>
         </li>
         <li class="nav-item">
@@ -115,7 +108,11 @@
     </nav>
     <!-- End Navbar -->
 
-    @yield('content')
+    <div id="app">
+      @yield('content')
+    </div>
+
+
     
   </main>
   <!--   Core JS Files   -->
@@ -128,6 +125,8 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ URL::asset('adminAssets/assets/js/argon-dashboard.min.js?v=2.0.2') }}"></script>
+
+  <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 
 </html>

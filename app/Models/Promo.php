@@ -16,6 +16,7 @@ class Promo extends Model
         'image',
         'price',
         'isPremium',
-        'promoMessage'
+        'promoMessage',
+        'id_section'
     ];
 }

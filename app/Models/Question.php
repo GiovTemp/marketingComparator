@@ -16,7 +16,9 @@ class Question extends Model
         'description',
         'answers',
         'is_required',
-        'order'
+        'order',
+        'id_section',
+        'price'
     ];
 
 

@@ -18,7 +18,7 @@
             Rispondi a delle semplici domande e realizzeremo il preventivo perfetto per te!
           </span>
         </h1>
-        <a href="/questions" style="text-decoration:none;"><button type="button" class="rounded-pill btn-rounded">Rispondi adesso
+        <a href="/sections" style="text-decoration:none;"><button type="button" class="rounded-pill btn-rounded">Rispondi adesso
           <span><i class="fas fa-arrow-right"></i></span>
         </button>
         </a>

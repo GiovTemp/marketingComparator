@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Question;
 use App\Models\Answer;
 use App\Models\Promo;
-
+use App\Models\Section;
 use File;
 use Illuminate\Support\Str;
 
@@ -28,11 +28,19 @@ class AdminController extends Controller
     //
     public function index()
     {
-        $questions = Question::all()->sortBy('order');
-        $promos = Promo::all();
-        $premium= Promo::where('isPremium',true)->first();
+        $sections= Section::all();
        
-        return view('admin/dashboard',['questions' => $questions,'promos'=>$promos,'premium'=>$premium]);
+        return view('admin/dashboard',['sections'=>$sections]);
+    }
+
+    public function dashboardSection($id)
+    {
+        
+        $questions = Question::where('id_section',$id)->orderBy('order')->get();
+        $promos = Promo::where('id_section',$id)->get();
+        $premium= Promo::where('isPremium',true)->where('id_section',$id)->first();
+       
+        return view('admin/section/dashboard',['questions' => $questions,'promos'=>$promos,'premium'=>$premium,'id'=>$id]);
     }
 
 
@@ -42,8 +50,8 @@ class AdminController extends Controller
      *
      * @return void
      */
-    public function showCreateQuestion(){
-        return view('admin/question/create');
+    public function showCreateQuestion($id){
+        return view('admin/question/create',['id' => $id]);
     }
 
 
@@ -53,29 +61,38 @@ class AdminController extends Controller
      * @return void
      */
     public function createQuestion(Request $request){
-        $request->answers = Str::replaceArray('\/', [' '],   $request->answers);
-      
+        
+        //return $request->id_section  ;
         
         $order = Question::max('order');
         
         if($order===null){
             $order=0;
-        }else{
-           
+        }else{           
             $order=$order+1; 
         }
-
-        $q = new Question([
-            'title' => $request->title,
-            'description' => $request->description,
-            'answers' => $request->answers,
-            'is_required' => true,
-            'order' => $order
-        ]);
-
-        $q->save();
-
-        return redirect('/admin');
+       
+        try{
+            $q = new Question([
+                'title' => $request->question_data['title'],
+                'description' => $request->question_data['description'],
+                'answers' => json_encode($request->answersList),
+                'is_required' => true,
+                'order' => $order,
+                'id_section' => $request->id_section            
+            ]);
+    
+           if(isset($request->price)){
+               $q->price=true;
+           }
+    
+            $q->save();
+    
+        }catch(Throwable $e){
+            return $e;
+        }
+        
+        return true;
     }
 
     /**
@@ -153,16 +170,13 @@ class AdminController extends Controller
         return view('admin/question/view',['question' => $question,'answers'=>json_decode($question->answers)]);
     }
 
-
-
-
     /**
      * Show Create new Promo.
      *
      * @return void
      */
-    public function showCreatePromo(){
-        return view('admin/promo/create');
+    public function showCreatePromo($id){
+        return view('admin/promo/create',['id_section' => $id]);
     }
 
 
@@ -173,23 +187,20 @@ class AdminController extends Controller
      */
     public function createPromo(Request $request){
 
-        
-        $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
-        ]);
+        return $request->all();
 
         $newImageName = time().'-'.$request->title . '.'.$request->image->extension();
         
         self::uploadPhoto($request->image,$newImageName);
-                
+
+   
         $p = new Promo([
             'title' => $request->title,
             'description' => $request->description,
             'score' => $request->score,
             'price' => $request->price,
-            'image' => $newImageName
+            'image' => $newImageName,
+            'id_section' => $request->section_id
         ]);
 
         if(isset($request->promoMessage)){
@@ -241,12 +252,9 @@ class AdminController extends Controller
         return redirect('/admin');  
 
     }
-    
-    
-
-        
+     
     /**
-     * Show Edit Question.
+     * Show Edit Promo.
      *
      * @return void
      */
@@ -256,7 +264,7 @@ class AdminController extends Controller
     }
 
         /**
-     * Edit Question.
+     * Edit Promo.
      *
      * @return void
      */
@@ -320,6 +328,32 @@ class AdminController extends Controller
     public function deleteAnswer($id){
         Answer::find($id)->delete();
         return redirect('/admin/estimateRequest');
+    }
+
+        /**
+     * Show Create new Question.
+     *
+     * @return void
+     */
+    public function showCreateSection(){
+        return view('admin/section/create');
+    }
+
+    public function createSection(Request $request){
+
+        $request->validate([
+            'title' => 'required'
+        ]);
+                       
+        $s = new Section([
+            'title' => $request->title,
+        ]);
+
+        $s->save();
+
+        return redirect('/admin');
+        
+
     }
 
 }

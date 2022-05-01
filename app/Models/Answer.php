@@ -16,6 +16,7 @@ class Answer extends Model
         'cf',
         'email',
         'results',
-        'id_promo'
+        'id_promo',
+        'section_id'
     ];
 }
