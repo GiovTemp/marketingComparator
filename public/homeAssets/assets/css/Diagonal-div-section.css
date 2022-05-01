@@ -1,0 +1,27 @@
+#diagonal {
+  width: 100%;
+  background: linear-gradient(to top, rgb(210, 105, 30) , rgb(221, 175, 39));
+  transform: rotate(2deg) skew(2deg);
+  -webkit-transform: rotate(2deg) skew(2deg);
+  -moz-transform: rotate(2deg) skew(2deg);
+  -o-transform: rotate(2deg) skew(2deg);
+  -ms-transform: rotate(2deg) skew(2deg);
+  margin-top: 100px;
+}
+
+#diagonal .container {
+  padding: 0 100px 100px 100px;
+}
+
+#diagonal-text {
+  color: #fff;
+  padding: 35px 0 15px;
+  transform: rotate(-2deg) skew(-2deg);
+  -webkit-transform: rotate(-2deg) skew(-2deg);
+  -moz-transform: rotate(-2deg) skew(-2deg);
+  -o-transform: rotate(-2deg) skew(-2deg);
+  -ms-transform: rotate(-2deg) skew(-2deg);
+  margin-bottom: -20px;
+  padding-bottom: 50px;
+}
+

@@ -5445,45 +5445,90 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      formValues: {},
-      questions: [{
-        "id": 3,
-        "title": "Domanda 3",
-        "description": "aa",
-        "is_required": 1,
-        answers: [{
-          "id": 0,
-          "text": "Risposta a",
-          "score": "40"
-        }, {
-          "id": 1,
-          "text": "Risposta b",
-          "score": "40"
-        }],
-        "order": 2,
-        "id_section": 1,
-        "price": 1
-      }, {
-        "id": 4,
-        "title": "Domanda 4",
-        "description": "aa",
-        "is_required": 1,
-        answers: [{
-          "id": 0,
-          "text": "Risposta a",
-          "score": "40"
-        }, {
-          "id": 1,
-          "text": "Risposta b",
-          "score": "40"
-        }],
-        "order": 2,
-        "id_section": 1,
-        "price": 1
-      }]
+      formValues: {}
     };
   },
   methods: {
@@ -5506,6 +5551,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5591,6 +5659,73 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -28734,60 +28869,101 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
       _c("h2", [_vm._v("Crea Promozione App")]),
       _vm._v(" "),
       _c(
-        "FormulateForm",
+        "form",
         {
-          on: { submit: _vm.handleSubmit },
-          model: {
-            value: _vm.formValues,
-            callback: function ($$v) {
-              _vm.formValues = $$v
-            },
-            expression: "formValues",
+          attrs: {
+            method: "POST",
+            action: "/admin/createPromo",
+            enctype: "multipart/form-data",
           },
         },
         [
-          _c("FormulateInput", {
-            attrs: { type: "submit", label: "Crea Promo" },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "title" } }, [_vm._v("Nome Promo")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "title",
+                type: "text",
+                name: "title",
+                placeholder: "Insersci testo domanda",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "title",
-              label: "Nome Promozione",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "description" } }, [
+              _vm._v("Descrizone Promo"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "description",
+                type: "text",
+                name: "description",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "description",
-              label: "Descrizione Promozione",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "score" } }, [_vm._v("Score Offerta")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "score",
+                type: "text",
+                name: "score",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "score",
-              label: "Score offerta",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "image" } }, [
+              _vm._v("Immagine Promo"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "image",
+                type: "file",
+                name: "image",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              type: "image",
-              name: "image",
-              label: "Immagine Promo",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "image" } }, [
+              _vm._v("Messaggio promozionale"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "promoMessage",
+                type: "text",
+                name: "promoMessage",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
+          ]),
           _vm._v(" "),
           _c("h2", [_vm._v("Prezzi Promo")]),
           _vm._v(" "),
@@ -28797,41 +28973,84 @@ var render = function () {
             _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
           ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "typeApp1",
-              label: "Android",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeApp1" } }, [_vm._v("Android")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeApp1",
+                type: "text",
+                name: "typeApp1",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "typeApp2",
-              label: "IOS (Apple)",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeApp2" } }, [
+              _vm._v("IOS (Apple)"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeApp2",
+                type: "text",
+                name: "typeApp2",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "typeApp3",
-              label: "Android + IOS",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeApp3" } }, [
+              _vm._v("Android + IOS"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeApp3",
+                type: "text",
+                name: "typeApp3",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "typeApp4",
-              label: "Ibrida",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeApp4" } }, [_vm._v("Ibrida")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeApp4",
+                type: "text",
+                name: "typeApp4",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: { name: "typeApp5", label: "Altro", validation: "required" },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeApp5" } }, [_vm._v("Altro")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeApp5",
+                type: "text",
+                name: "typeApp5",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
@@ -28841,61 +29060,120 @@ var render = function () {
             _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
           ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "infoApp1",
-              label: "Gioco per uso privato",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "infoApp1" } }, [
+              _vm._v("Gioco per uso privato"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "infoApp1",
+                type: "text",
+                name: "infoApp1",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "infoApp2",
-              label: "Per business",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "infoApp2" } }, [
+              _vm._v("Per business"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "infoApp2",
+                type: "text",
+                name: "infoApp2",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "infoApp3",
-              label: "Social network / community",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "infoApp3" } }, [
+              _vm._v("Social network / community"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "infoApp3",
+                type: "text",
+                name: "infoApp3",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "infoApp4",
-              label: "E-commerce",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "infoApp4" } }, [_vm._v("E-commerce")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "infoApp4",
+                type: "text",
+                name: "infoApp4",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "infoApp5",
-              label: "Servizio",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "infoApp5" } }, [_vm._v("Servizio")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "infoApp5",
+                type: "text",
+                name: "infoApp5",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "infoApp6",
-              label: "Multimedia (immagini, video)",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "infoApp6" } }, [
+              _vm._v("Multimedia (immagini, video)"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "infoApp6",
+                type: "text",
+                name: "infoApp6",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "infoApp7",
-              label: "Prototipo MVP",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "infoApp7" } }, [
+              _vm._v("Prototipo MVP"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "infoApp7",
+                type: "text",
+                name: "infoApp7",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
@@ -28905,40 +29183,71 @@ var render = function () {
             _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
           ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "addService1",
-              label: "Creazione profilo degli utenti",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "addService1" } }, [
+              _vm._v("Creazione profilo degli utenti"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "addService1",
+                type: "text",
+                name: "addService1",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "addService2",
-              label: "Promozione su marketplaces",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "addService2" } }, [
+              _vm._v("Promozione su marketplaces"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "addService2",
+                type: "text",
+                name: "addService2",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "addService3",
-              label: "Multilingua",
-              validation: "required",
-            },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "addService3" } }, [
+              _vm._v("Multilingua"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "addService3",
+                type: "text",
+                name: "addService3",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("h3", [_vm._v("Values:")]),
-        ],
-        1
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary",
+              staticStyle: { "background-color": "green" },
+              attrs: { type: "submit" },
+            },
+            [_vm._v("Crea Promo")]
+          ),
+        ]
       ),
-      _vm._v("\n  " + _vm._s(_vm.formValues) + "\n\n"),
-    ],
-    1
-  )
-}
-var staticRenderFns = []
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -28961,75 +29270,130 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
       _c("h2", [_vm._v("Crea Promozione Marketing")]),
       _vm._v(" "),
       _c(
-        "FormulateForm",
+        "form",
         {
-          on: { submit: _vm.handleSubmit },
-          model: {
-            value: _vm.formValues,
-            callback: function ($$v) {
-              _vm.formValues = $$v
-            },
-            expression: "formValues",
+          attrs: {
+            method: "POST",
+            action: "/admin/createPromo",
+            enctype: "multipart/form-data",
           },
         },
         [
-          _c("FormulateInput", {
-            attrs: { type: "submit", label: "Crea Promo" },
-          }),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "title" } }, [_vm._v("Nome Promo")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "title",
+                type: "text",
+                name: "title",
+                placeholder: "Insersci testo domanda",
+              },
+            }),
+          ]),
           _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "title",
-              label: "Nome Promozione",
-              validation: "required",
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "description" } }, [
+              _vm._v("Descrizone Promo"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "description",
+                type: "text",
+                name: "description",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "score" } }, [_vm._v("Score Offerta")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "score",
+                type: "text",
+                name: "score",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "image" } }, [
+              _vm._v("Immagine Promo"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "image",
+                type: "file",
+                name: "image",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "price" } }, [_vm._v("Prezzo")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "price",
+                type: "text",
+                name: "price",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "image" } }, [
+              _vm._v("Messaggio promozionale"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "promoMessage",
+                type: "text",
+                name: "promoMessage",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary",
+              staticStyle: { "background-color": "green" },
+              attrs: { type: "submit" },
             },
-          }),
-          _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "description",
-              label: "Descrizione Promozione",
-              validation: "required",
-            },
-          }),
-          _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              name: "score",
-              label: "Score offerta",
-              validation: "required",
-            },
-          }),
-          _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: { name: "price", label: "Prezzo", validation: "required" },
-          }),
-          _vm._v(" "),
-          _c("FormulateInput", {
-            attrs: {
-              type: "image",
-              name: "image",
-              label: "Immagine Promo",
-              validation: "required",
-            },
-          }),
-          _vm._v(" "),
-          _c("h3", [_vm._v("Values:")]),
-        ],
-        1
+            [_vm._v("Crea Promo")]
+          ),
+        ]
       ),
-      _vm._v("\n  " + _vm._s(_vm.formValues) + "\n\n"),
-    ],
-    1
-  )
-}
-var staticRenderFns = []
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -29052,353 +29416,508 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h2", [_vm._v("Crea Promozione Per la sezione Web")]),
-    _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _c("h3", [_vm._v("Values:")]),
-    _vm._v("\n\n\n  " + _vm._s(_vm.formValues) + "\n\n"),
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "form",
-      {
-        attrs: {
-          method: "POST",
-          action: "/admin/createPromo",
-          enctype: "multipart/form-data",
+    return _c("div", [
+      _c("h2", [_vm._v("Crea Promozione Per la sezione Web")]),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          attrs: {
+            method: "POST",
+            action: "/admin/createPromo",
+            enctype: "multipart/form-data",
+          },
         },
-      },
-      [
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "title" } }, [_vm._v("Nome Promo")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              id: "title",
-              type: "text",
-              name: "title",
-              placeholder: "Insersci testo domanda",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "description" } }, [
-            _vm._v("Descrizone Promo"),
+        [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "title" } }, [_vm._v("Nome Promo")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "title",
+                type: "text",
+                name: "title",
+                placeholder: "Insersci testo domanda",
+              },
+            }),
           ]),
           _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              id: "description",
-              type: "text",
-              name: "description",
-              placeholder: "Inserisci descrizione",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "score" } }, [_vm._v("Score Offerta")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              id: "score",
-              type: "text",
-              name: "score",
-              placeholder: "Inserisci descrizione",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "price" } }, [_vm._v("Prezzo")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              id: "price",
-              type: "text",
-              name: "price",
-              placeholder: "Inserisci descrizione",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "image" } }, [_vm._v("Immagine Promo")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              id: "image",
-              type: "file",
-              name: "image",
-              placeholder: "Inserisci descrizione",
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "image" } }, [
-            _vm._v("Messaggio promozionale"),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "description" } }, [
+              _vm._v("Descrizone Promo"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "description",
+                type: "text",
+                name: "description",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
           ]),
           _vm._v(" "),
-          _c("input", {
-            staticClass:
-              "form-control @error('promoMessage') is-invalid @enderror",
-            attrs: {
-              id: "promoMessage",
-              type: "text",
-              name: "promoMessage",
-              placeholder: "Inserisci descrizione",
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "score" } }, [_vm._v("Score Offerta")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "score",
+                type: "text",
+                name: "score",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "image" } }, [
+              _vm._v("Immagine Promo"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "image",
+                type: "file",
+                name: "image",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "image" } }, [
+              _vm._v("Messaggio promozionale"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "promoMessage",
+                type: "text",
+                name: "promoMessage",
+                placeholder: "Inserisci descrizione",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("h2", [_vm._v("Prezzi Promo")]),
+          _vm._v(" "),
+          _c("h4", [_vm._v("Che tipo di sito?")]),
+          _vm._v(" "),
+          _c("h5", [
+            _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeWeb1" } }, [
+              _vm._v("Sito web personale"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeWeb1",
+                type: "text",
+                name: "typeWeb1",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeWeb2" } }, [
+              _vm._v("BlogSocial network / Community"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeWeb2",
+                type: "text",
+                name: "typeWeb2",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeWeb3" } }, [_vm._v("E-commerce")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeWeb3",
+                type: "text",
+                name: "typeWeb3",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeWeb4" } }, [_vm._v("Newsletter")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeWeb4",
+                type: "text",
+                name: "typeWeb4",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeWeb5" } }, [
+              _vm._v("Sito vetrina"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeWeb5",
+                type: "text",
+                name: "typeWeb5",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeWeb6" } }, [
+              _vm._v("CMS o sezione amministrativa"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeWeb6",
+                type: "text",
+                name: "typeWeb6",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeWeb7" } }, [
+              _vm._v("Pagina di atterraggio"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeWeb7",
+                type: "text",
+                name: "typeWeb7",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeWeb8" } }, [
+              _vm._v("Sito aziendale"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeWeb8",
+                type: "text",
+                name: "typeWeb8",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "typeWeb9" } }, [_vm._v("Altro")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "typeWeb9",
+                type: "text",
+                name: "typeWeb9",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("hr"),
+          _vm._v(" "),
+          _c("h4", [_vm._v("Quante pagine sono coinvolte?")]),
+          _vm._v(" "),
+          _c("h5", [
+            _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "pricePage1" } }, [
+              _vm._v("1-5 pagine"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "pricePage1",
+                type: "text",
+                name: "pricePage1",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "pricePage2" } }, [
+              _vm._v("5-20 pagine"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "pricePage2",
+                type: "text",
+                name: "pricePage2",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "pricePage3" } }, [
+              _vm._v("20-100 pagine"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "pricePage3",
+                type: "text",
+                name: "pricePage3",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "pricePage4" } }, [
+              _vm._v("Più di 100 pagine"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "pricePage4",
+                type: "text",
+                name: "pricePage4",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("hr"),
+          _vm._v(" "),
+          _c("h4", [_vm._v("Hai bisogno anche di : ")]),
+          _vm._v(" "),
+          _c("h5", [
+            _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "addService1" } }, [
+              _vm._v("Creazione profilo degli utenti"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "addService1",
+                type: "text",
+                name: "addService1",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "addService2" } }, [
+              _vm._v("Comprare il dominio"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "addService2",
+                type: "text",
+                name: "addService2",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "addService3" } }, [
+              _vm._v("Caricare video"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "addService3",
+                type: "text",
+                name: "addService3",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "addService4" } }, [
+              _vm._v("Caricare immagini"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "addService4",
+                type: "text",
+                name: "addService4",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "addService5" } }, [
+              _vm._v(
+                "Ottimizzare le Keywords e posizionarlo sui motori di ricerca"
+              ),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "addService5",
+                type: "text",
+                name: "addService5",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "addService6" } }, [
+              _vm._v("Sito multilingua"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "addService6",
+                type: "text",
+                name: "addService6",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "addService7" } }, [
+              _vm._v("Gestione server"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "addService7",
+                type: "text",
+                name: "addService7",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "addService8" } }, [
+              _vm._v("Web mobile responsive"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "addService8",
+                type: "text",
+                name: "addService8",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "addService9" } }, [
+              _vm._v("Transazioni con Paypal, carte di credito o altro"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: {
+                id: "addService9",
+                type: "text",
+                name: "addService9",
+                placeholder: "Inserisci Prezzo",
+                required: "",
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary",
+              staticStyle: { "background-color": "green" },
+              attrs: { type: "submit" },
             },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("h2", [_vm._v("Prezzi Promo")]),
-        _vm._v(" "),
-        _c("h4", [_vm._v("Che tipo di sito?")]),
-        _vm._v(" "),
-        _c("h5", [
-          _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "typeWeb1",
-            label: "Sito web personale",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "typeWeb2",
-            label: "BlogSocial network / Community",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "typeWeb3",
-            label: "E-commerce",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "typeWeb4",
-            label: "Newsletter",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "typeWeb5",
-            label: "Sito vetrina",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "typeWeb6",
-            label: "CMS o sezione amministrativa",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "typeWeb7",
-            label: "Pagina di atterraggio",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "typeWeb8",
-            label: "Sito aziendale",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "typeWeb9",
-            label: "Altro",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("h4", [_vm._v("Quante pagine sono coinvolte?")]),
-        _vm._v(" "),
-        _c("h5", [
-          _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "pricePage1",
-            label: "1-5 pagine",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "pricePage2",
-            label: "5-20 pagine",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "pricePage3",
-            label: "20-100 pagine",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "pricePage4",
-            label: "Più di 100 pagine",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("h4", [_vm._v("Hai bisogno anche di : ")]),
-        _vm._v(" "),
-        _c("h5", [
-          _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "addService1",
-            label: "Creazione profilo degli utenti",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "addService2",
-            label: "Comprare il dominio",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "addService3",
-            label: "Caricare video",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "addService4",
-            label: "Caricare immagini",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "addService5",
-            label:
-              "Ottimizzare le Keywords e posizionarlo sui motori di ricerca",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "addService6",
-            label: "Sito multilingua",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "addService7",
-            label: "Gestione server",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "addService8",
-            label: "Web mobile responsive",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "addService9",
-            label: "Transazioni con Paypal, carte di credito o altro",
-            validation: "required",
-          },
-        }),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary",
-            staticStyle: { "background-color": "green" },
-            attrs: { type: "submit" },
-          },
-          [_vm._v("Crea Promo")]
-        ),
-      ]
-    )
+            [_vm._v("Crea Promo")]
+          ),
+        ]
+      ),
+    ])
   },
 ]
 render._withStripped = true
@@ -41571,7 +42090,7 @@ Vue.compile = compileToFunctions;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_from":"axios@0.21.4"}');
+module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
 
 /***/ })
 

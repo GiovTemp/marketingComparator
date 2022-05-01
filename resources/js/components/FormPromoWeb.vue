@@ -41,46 +41,116 @@
       <h5>Inserire i prezzi in valori numerici ( no simboli ) </h5>
       <div class="form-group">
         <label for="typeWeb1">Sito web personale</label>
-        <input class="form-control" id="typeWeb1" type="text" name="typeWeb1" placeholder="Inserisci Prezzo">       
+        <input class="form-control" id="typeWeb1" type="text" name="typeWeb1" placeholder="Inserisci Prezzo" required>       
       </div>
-      <input type="text" name="typeWeb1" label="" validation="required" />
-      <input type="text" name="typeWeb2" label="BlogSocial network / Community" validation="required" />
-      <input type="text" name="typeWeb3" label="E-commerce" validation="required" />
-      <input type="text" name="typeWeb4" label="Newsletter" validation="required" />
-      <input type="text" name="typeWeb5" label="Sito vetrina" validation="required" />
-      <input type="text" name="typeWeb6" label="CMS o sezione amministrativa" validation="required" />
-      <input type="text" name="typeWeb7" label="Pagina di atterraggio" validation="required" />
-      <input type="text" name="typeWeb8" label="Sito aziendale" validation="required" />
-      <input type="text" name="typeWeb9" label="Altro" validation="required" />
+            <div class="form-group">
+        <label for="typeWeb2">BlogSocial network / Community</label>
+        <input class="form-control" id="typeWeb2" type="text" name="typeWeb2" placeholder="Inserisci Prezzo" required>       
+      </div>
+            <div class="form-group">
+        <label for="typeWeb3">E-commerce</label>
+        <input class="form-control" id="typeWeb3" type="text" name="typeWeb3" placeholder="Inserisci Prezzo" required>       
+      </div>
+            <div class="form-group">
+        <label for="typeWeb4">Newsletter</label>
+        <input class="form-control" id="typeWeb4" type="text" name="typeWeb4" placeholder="Inserisci Prezzo" required>       
+      </div>
+            <div class="form-group">
+        <label for="typeWeb5">Sito vetrina</label>
+        <input class="form-control" id="typeWeb5" type="text" name="typeWeb5" placeholder="Inserisci Prezzo" required>       
+      </div>
+            <div class="form-group">
+        <label for="typeWeb6">CMS o sezione amministrativa</label>
+        <input class="form-control" id="typeWeb6" type="text" name="typeWeb6" placeholder="Inserisci Prezzo" required>       
+      </div>
+            <div class="form-group">
+        <label for="typeWeb7">Pagina di atterraggio</label>
+        <input class="form-control" id="typeWeb7" type="text" name="typeWeb7" placeholder="Inserisci Prezzo" required>       
+      </div>
+            <div class="form-group">
+        <label for="typeWeb8">Sito aziendale</label>
+        <input class="form-control" id="typeWeb8" type="text" name="typeWeb8" placeholder="Inserisci Prezzo" required>       
+      </div>
+      <div class="form-group">
+        <label for="typeWeb9">Altro</label>
+        <input class="form-control" id="typeWeb9" type="text" name="typeWeb9" placeholder="Inserisci Prezzo" required>       
+      </div>
       <hr>
       <h4>Quante pagine sono coinvolte?</h4>
       <h5>Inserire i prezzi in valori numerici ( no simboli ) </h5>
-      <input type="text" name="pricePage1" label="1-5 pagine" validation="required" />
-      <input type="text" name="pricePage2" label="5-20 pagine" validation="required" />
-      <input type="text" name="pricePage3" label="20-100 pagine" validation="required" />
-      <input type="text" name="pricePage4" label="Più di 100 pagine" validation="required" />
+      <div class="form-group">
+        <label for="pricePage1">1-5 pagine</label>
+        <input class="form-control" id="pricePage1" type="text" name="pricePage1" placeholder="Inserisci Prezzo" required>       
+      </div>
+
+            <div class="form-group">
+        <label for="pricePage2">5-20 pagine</label>
+        <input class="form-control" id="pricePage2" type="text" name="pricePage2" placeholder="Inserisci Prezzo" required>       
+      </div>
+
+            <div class="form-group">
+        <label for="pricePage3">20-100 pagine</label>
+        <input class="form-control" id="pricePage3" type="text" name="pricePage3" placeholder="Inserisci Prezzo" required>       
+      </div>
+
+            <div class="form-group">
+        <label for="pricePage4">Più di 100 pagine</label>
+        <input class="form-control" id="pricePage4" type="text" name="pricePage4" placeholder="Inserisci Prezzo" required>       
+      </div>
+
       <hr>
       <h4>Hai bisogno anche di : </h4>
       <h5>Inserire i prezzi in valori numerici ( no simboli ) </h5>
-      <input type="text" name="addService1" label="Creazione profilo degli utenti" validation="required" />
-      <input type="text" name="addService2" label="Comprare il dominio" validation="required" />
-      <input type="text" name="addService3" label="Caricare video" validation="required" />
-      <input type="text" name="addService4" label="Caricare immagini" validation="required" />
-      <input type="text" name="addService5" label="Ottimizzare le Keywords e posizionarlo sui motori di ricerca" validation="required" />
-      <input type="text" name="addService6" label="Sito multilingua" validation="required" />
-      <input type="text" name="addService7" label="Gestione server" validation="required" />
-      <input type="text" name="addService8" label="Web mobile responsive" validation="required" />
-      <input type="text" name="addService9" label="Transazioni con Paypal, carte di credito o altro" validation="required" />
+
+      <div class="form-group">
+        <label for="addService1">Creazione profilo degli utenti</label>
+        <input class="form-control" id="addService1" type="text" name="addService1" placeholder="Inserisci Prezzo" required>       
+      </div>
+
+      <div class="form-group">
+        <label for="addService2">Comprare il dominio</label>
+        <input class="form-control" id="addService2" type="text" name="addService2" placeholder="Inserisci Prezzo" required>       
+      </div>
+
+      <div class="form-group">
+        <label for="addService3">Caricare video</label>
+        <input class="form-control" id="addService3" type="text" name="addService3" placeholder="Inserisci Prezzo" required>       
+      </div>
+
+      <div class="form-group">
+        <label for="addService4">Caricare immagini</label>
+        <input class="form-control" id="addService4" type="text" name="addService4" placeholder="Inserisci Prezzo" required>       
+      </div>
+
+      <div class="form-group">
+        <label for="addService5">Ottimizzare le Keywords e posizionarlo sui motori di ricerca</label>
+        <input class="form-control" id="addService5" type="text" name="addService5" placeholder="Inserisci Prezzo" required>       
+      </div>
+
+      <div class="form-group">
+        <label for="addService6">Sito multilingua</label>
+        <input class="form-control" id="addService6" type="text" name="addService6" placeholder="Inserisci Prezzo" required>       
+      </div>
+
+      <div class="form-group">
+        <label for="addService7">Gestione server</label>
+        <input class="form-control" id="addService7" type="text" name="addService7" placeholder="Inserisci Prezzo" required>       
+      </div>
+
+      <div class="form-group">
+        <label for="addService8">Web mobile responsive</label>
+        <input class="form-control" id="addService8" type="text" name="addService8" placeholder="Inserisci Prezzo" required>       
+      </div>
+
+      <div class="form-group">
+        <label for="addService9">Transazioni con Paypal, carte di credito o altro</label>
+        <input class="form-control" id="addService9" type="text" name="addService9" placeholder="Inserisci Prezzo" required>       
+      </div>
+
 
        <button type="submit" class="btn btn-primary" style="background-color: green;">Crea Promo</button>
 
           </form>
-
-
-    <h3>Values:</h3>
-
-
-    {{formValues}}
 
   </div>
 </template>

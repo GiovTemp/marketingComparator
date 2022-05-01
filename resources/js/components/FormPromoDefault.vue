@@ -1,21 +1,45 @@
 <template>
   <div>
     <h2>Crea Promozione </h2>
-    <FormulateForm v-model="formValues" @submit="handleSubmit">
-      <FormulateInput type="submit" label="Crea Promo" />
+      <form method="POST" action="/admin/createPromo" enctype="multipart/form-data">
 
-      <FormulateInput name="title" label="Nome Promozione" validation="required" />
-      <FormulateInput name="description" label="Descrizione Promozione" validation="required" />
-      <FormulateInput name="score" label="Score offerta" validation="required" />
-      <FormulateInput name="price" label="Prezzo" validation="required" />
-      <FormulateInput type="image" name="image" label="Immagine Promo" validation="required" />     
+                    
+                      <div class="form-group">
+                          <label for="title">Nome Promo</label>
+                          <input id="title" type="text" name="title" class="form-control" placeholder="Insersci testo domanda">
+                                        </div>
 
-      
+                      <div class="form-group">
+                          <label for="description">Descrizone Promo</label>
+                          <input class="form-control" id="description" type="text" name="description" placeholder="Inserisci descrizione">
+                          
+                      </div>
 
-    <h3>Values:</h3>
+                      
+                      <div class="form-group">
+                          <label for="score">Score Offerta</label>
+                          <input class="form-control" id="score" type="text" name="score" placeholder="Inserisci descrizione">
+                                        </div>
 
-    </FormulateForm>
-    {{formValues}}
+                      <div class="form-group">
+                          <label for="image">Immagine Promo</label>
+                          <input class="form-control" id="image" type="file" name="image" placeholder="Inserisci descrizione">
+                        
+                      </div>
+
+                      <div class="form-group">
+                          <label for="price">Prezzo</label>
+                          <input class="form-control" id="price" type="text" name="price" placeholder="Inserisci descrizione">
+                        
+                      </div>
+
+                      <div class="form-group">
+                          <label for="image">Messaggio promozionale</label>
+                          <input class="form-control" id="promoMessage" type="text" name="promoMessage" placeholder="Inserisci descrizione">
+                        
+                      </div>
+                            <button type="submit" class="btn btn-primary" style="background-color: green;">Crea Promo</button>
+      </form>
 
   </div>
 </template>
