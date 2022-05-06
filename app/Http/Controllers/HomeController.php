@@ -83,6 +83,7 @@ class HomeController extends Controller
             while($i<count($promos)){
                 $total=0;
                 $temp = json_decode($promos[$i]->price);
+                $j=0;
                 while($j<count($infoPrice)){
                     $type=$infoPrice[$j]['type'];
                     $total= $total + $temp->$type[$infoPrice[$j]['id_answer']];                    
