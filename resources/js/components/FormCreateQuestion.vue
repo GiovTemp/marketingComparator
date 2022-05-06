@@ -39,9 +39,10 @@ export default {
                     answersList : this.answersList
 
             }).then((response) => {
-                if(response.data===true){
+                if(response.data===1){
                   alert("Domanda inserita correttamente")
                 }else{
+                  console.log(response.data)
                   alert("Qualcosa è andato storto. Contatta il webmaster");
                 }
             }).catch((error) => {

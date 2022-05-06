@@ -12,7 +12,9 @@
                 <h6 class="mb-2">Dettagli Promo</h6>
               </div>
             </div>
-            <div class="card-body">                
+            <div class="card-body">
+              PRESTO DISPONIBILE
+              <!--                
                 <label for="title">Nome : {{ $promo->title }}</label> 
                 <br><br>
                 <label for="description">Descrizione Promo : {{ $promo->description }}</label>
@@ -22,7 +24,8 @@
                 <label for="price">Prezzo Promo : {{ $promo->price }}</label>
                 <br><br>   
                 <img src="{{asset('images/').'/'.$promo->image}}">
-                <br><br>      
+                <br><br>
+              -->
             </div>
           </div>
         </div>

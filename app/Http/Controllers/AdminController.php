@@ -82,10 +82,7 @@ class AdminController extends Controller
                 'id_section' => $request->id_section            
             ]);
     
-           if(isset($request->price)){
-               $q->price=true;
-           }
-    
+   
             $q->save();
     
         }catch(Throwable $e){
@@ -187,21 +184,78 @@ class AdminController extends Controller
      */
     public function createPromo(Request $request){
 
-        return $request->all();
+        $result =$request->all();
+        
+        $i=1;
+
+
+
+        if($request->id_section==1){
+
+            $infoPrice = [
+                'typeWeb' => [],
+                'pricePage' => [],
+                'addService' => [],
+            ];
+            while(isset($result['typeWeb'.$i])){
+                array_push($infoPrice['typeWeb'],$result['typeWeb'.$i]);
+                $i++;
+            }
+            $i=1;
+            while(isset($result['pricePage'.$i])){
+                array_push($infoPrice['pricePage'],$result['pricePage'.$i]);
+                $i++;
+            }
+            $i=1;
+            while(isset($result['addService'.$i])){
+                array_push($infoPrice['addService'],$result['addService'.$i]);
+                $i++;
+            }
+
+        }else if($request->id_section==3){
+
+            $infoPrice = [
+                'typeApp' => [],
+                'infoApp' => [],
+                'addService' => [],
+            ];
+            while(isset($result['typeApp'.$i])){
+                array_push($infoPrice['typeApp'],$result['typeApp'.$i]);
+                $i++;
+            }
+            $i=1;
+            while(isset($result['infoApp'.$i])){
+                array_push($infoPrice['infoApp'],$result['infoApp'.$i]);
+                $i++;
+            }
+            $i=1;
+            while(isset($result['addService'.$i])){
+                array_push($infoPrice['addService'],$result['addService'.$i]);
+                $i++;
+            }
+
+        }
+
 
         $newImageName = time().'-'.$request->title . '.'.$request->image->extension();
         
         self::uploadPhoto($request->image,$newImageName);
 
-   
         $p = new Promo([
             'title' => $request->title,
             'description' => $request->description,
             'score' => $request->score,
-            'price' => $request->price,
             'image' => $newImageName,
-            'id_section' => $request->section_id
+            'id_section' => $request->id_section
         ]);
+
+        if(isset($request->price)){
+            $p->price = $request->price;
+        }
+        
+        if(isset($infoPrice)){
+            $p->price = json_encode($infoPrice);
+        }
 
         if(isset($request->promoMessage)){
         

@@ -16,12 +16,13 @@
 <p>Rispondi alle seguenti domande e il nostro algoritmo troverà l'offerta <b>su misura per te</b></p>
 <hr>
   <p>Informazioni personali</p>
-  <input type="text" required name="name" placeholder="Nome" />
-  <input type="text" required name="surname" placeholder="Cognome" />
-  <input type="text" required name="email" placeholder="Email" />
-  <input type="text" required name="iva" placeholder="P.IVA" />
-  <input type="text" required name="cf" placeholder="CF" />  
-  <input type="text" required name="city" placeholder="Città" /> 
+  <input type="hidden" name="id_section" value={{$id}}>
+  <input type="text" name="name" placeholder="Nome" />
+  <input type="text" name="surname" placeholder="Cognome" />
+  <input type="text" name="email" placeholder="Email" />
+  <input type="text" name="iva" placeholder="P.IVA" />
+  <input type="text" name="cf" placeholder="CF" />  
+  <input type="text" name="city" placeholder="Città" /> 
 </section>
 
 
@@ -33,7 +34,7 @@
     <hr>
     @foreach (json_decode($q->answers, true) as $a)
 
-    <input type="radio" value={{ $loop->index }}|{{$a['score']}} name={{$q->id}}> {{$a['text']}}<br>
+    <input type="radio" value={{ $loop->index }}|{{$a['score']}}|{{$q->price}} name={{$q->id}}> {{$a['text']}}<br>
     
     @endforeach
     
@@ -75,7 +76,8 @@
 
 
 @section('js')
-
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="../js/multi-form.js"></script>
+
 
 @endsection

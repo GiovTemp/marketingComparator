@@ -1,26 +1,41 @@
 @extends('layouts.app')
+@section('css')
+<link rel="stylesheet" href="{{ URL::asset('homeAssets/assets/css/listPromo.css') }}">
+@endsection
 @section('content')
-<div class="container" style="margin-top:10%;margin-bottom:10%">
-    <div class="row">
-    @foreach ($promos as $p)
-    
-<div class="card" style="width: 18rem; margin: 10px; padding:20px;">
-  <img src="{{ URL::asset('images') }}/{{$p->image}}" class="card-img-top" alt="...">
-  <div class="card-body">
-  <form name="estimate-form" method="POST" action="/requestEstimate">
-    @csrf
-    <h5 class="card-title">{{$p->title}}</h5>
-    <input type="hidden" name="id_promo" value={{$p->id}}>
-    <input type="hidden" name="result" value={{$results}}>
-    <p class="card-text">{{$p->description}}</p>
-    <button onClick="document.forms['estimate-form'].submit();" class="btn btn-primary">Richiedi Preventivo</a>
-    </form>
-  </div>
+
+<div class="container">
+<div class="row" style="margin-top:20px;">
+        <div class="col-lg-12">
+            <div class="card bottom-line" style="width: 100%;">          
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="container-fluid">
+                                    <h3 class="card-title" style="text-align: center;">Riepilogo servizi selezionati</h3>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+
+                                            <p class="card-text">Presto Disponibile</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+   
+                            </div>
+                        </div>
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </div> 
 </div>
+ 
 
-@endforeach
-
-    </div>
+<div id="app" >
+  <list style="margin-top:5vw;margin-bottom:5vw;" :promos="{{$promos}}"></list>
 </div>
 
 

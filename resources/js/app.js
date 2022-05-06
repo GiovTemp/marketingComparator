@@ -29,6 +29,10 @@ Vue.component('form-promo-app', require('./components/FormPromoApp.vue').default
 Vue.component('form-promo-marketing', require('./components/FormPromoMarketing.vue').default);
 Vue.component('form-promo', require('./components/FormPromoApp.vue').default);
 Vue.component('form-create-question', require('./components/FormCreateQuestion.vue').default);
+Vue.component('filters', require('./components/Filters.vue').default);
+Vue.component('promo-list', require('./components/PromoList.vue').default);
+Vue.component('box', require('./components/Box.vue').default);
+Vue.component('list', require('./components/VueList.vue').default);
 
 
 /**

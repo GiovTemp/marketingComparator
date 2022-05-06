@@ -10,6 +10,8 @@
               <h6 class="text-capitalize">Edit Questions</h6>
             </div>
             <div class="card-body p-3">
+              PRESTO DISPONIBILE
+              <!--
               <form method="POST" action="/admin/createQuestion">
               <div id="answerArray">
                   </div>
@@ -56,6 +58,7 @@
 
                 </div>
               </form>
+-->
             </div>
           </div>
         </div>

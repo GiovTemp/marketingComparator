@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 <div class="container-fluid py-4">
       <div class="row mt-4">
         <div class="col-lg-12 mb-lg-0 mb-4">
@@ -10,6 +12,8 @@
               <h6 class="text-capitalize">Modifica Offerta</h6>
             </div>
             <div class="card-body p-3">
+              PRESTO DISPONIBILE
+              <!--
               <form method="POST" action="/admin/editPromo" enctype="multipart/form-data">
               <input type="hidden" name="id" value={{ $promo->id }} >
                 @csrf
@@ -58,6 +62,7 @@
            
                     
               </form>
+              -->
             </div>
           </div>
         </div>

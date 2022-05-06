@@ -5314,6 +5314,69 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Box.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Box.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['item']
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FormCreateQuestion.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FormCreateQuestion.vue?vue&type=script&lang=js& ***!
@@ -5368,9 +5431,10 @@ __webpack_require__.r(__webpack_exports__);
         question_data: this.formValues,
         answersList: this.answersList
       }).then(function (response) {
-        if (response.data === true) {
+        if (response.data === 1) {
           alert("Domanda inserita correttamente");
         } else {
+          console.log(response.data);
           alert("Qualcosa è andato storto. Contatta il webmaster");
         }
       })["catch"](function (error) {
@@ -5526,6 +5590,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['csrf', 'section_id'],
   data: function data() {
     return {
       formValues: {}
@@ -5596,46 +5661,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['csrf', 'section_id'],
   data: function data() {
-    return {
-      formValues: {},
-      questions: [{
-        "id": 3,
-        "title": "Domanda 3",
-        "description": "aa",
-        "is_required": 1,
-        answers: [{
-          "id": 0,
-          "text": "Risposta a",
-          "score": "40"
-        }, {
-          "id": 1,
-          "text": "Risposta b",
-          "score": "40"
-        }],
-        "order": 2,
-        "id_section": 1,
-        "price": 1
-      }, {
-        "id": 4,
-        "title": "Domanda 4",
-        "description": "aa",
-        "is_required": 1,
-        answers: [{
-          "id": 0,
-          "text": "Risposta a",
-          "score": "40"
-        }, {
-          "id": 1,
-          "text": "Risposta b",
-          "score": "40"
-        }],
-        "order": 2,
-        "id_section": 1,
-        "price": 1
-      }]
-    };
+    return {};
   },
   methods: {
     handleSubmit: function handleSubmit() {
@@ -5816,9 +5846,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['section_id'],
+  props: ['csrf', 'section_id'],
   data: function data() {
     return {
       formValues: {}
@@ -5841,6 +5872,175 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         alert("Qualcosa è andato storto. Contatta il webmaster");
         console.log(error.response);
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PromoList.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PromoList.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Box_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Box.vue */ "./resources/js/components/Box.vue");
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Box: _Box_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: ['listdata']
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/VueList.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/VueList.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Filters_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Filters.vue */ "./resources/js/components/Filters.vue");
+/* harmony import */ var _PromoList_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PromoList.vue */ "./resources/js/components/PromoList.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Filters: _Filters_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    PromoList: _PromoList_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  props: ['promos'],
+  mounted: function mounted() {
+    this.state.products = this.promos;
+    this.products = this.promos;
+  },
+  data: function data() {
+    return {
+      state: {
+        products: [],
+        tag1: false,
+        tag2: false,
+        tag3: false,
+        order: null
+      },
+      products: []
+    };
+  },
+  methods: {
+    handleFilter: function handleFilter(id) {
+      switch (id) {
+        case 1:
+          this.state.tag1 = !this.state.tag1;
+          break;
+
+        case 2:
+          this.state.tag2 = !this.state.tag2;
+          break;
+
+        case 3:
+          this.state.tag3 = !this.state.tag3;
+          break;
+      }
+
+      this.filter();
+    },
+    handleOrder: function handleOrder() {
+      switch (this.state.order) {
+        case 1:
+          this.sortAsc();
+          break;
+
+        case 2:
+          this.sortDesc();
+          break;
+      }
+    },
+    filter: function filter() {
+      var i;
+      this.products = [];
+      i = 0;
+      var flag;
+
+      if (this.state.tag1 === false && this.state.tag2 === false && this.state.tag3 === false) {
+        this.products = this.state.products;
+      } else {
+        while (i < this.state.products.length) {
+          flag = false;
+
+          if (this.state.tag1 === true) {
+            if (this.state.products[i].tag1 === true) {
+              this.products.push(this.state.products[i]);
+              flag = true;
+            }
+          }
+
+          if (this.state.tag2 === true && flag === false) {
+            if (this.state.products[i].tag2 === true) {
+              this.products.push(this.state.products[i]);
+              flag = true;
+            }
+          }
+
+          if (this.state.tag3 === true && flag === false) {
+            if (this.state.products[i].tag3 === true) {
+              this.products.push(this.state.products[i]);
+              flag = true;
+            }
+          }
+
+          i++;
+        }
+      }
+
+      if (this.state.order === 1) {
+        this.sortAsc();
+      } else if (this.state.order === 2) {
+        this.sortDesc();
+      }
+    },
+    sortAsc: function sortAsc() {
+      this.state.order = 1;
+      this.products = this.products.sort(function (a, b) {
+        return a.total > b.total ? 1 : -1;
+      });
+    },
+    sortDesc: function sortDesc() {
+      this.state.order = 2;
+      this.products = this.products.sort(function (a, b) {
+        return a.total < b.total ? 1 : -1;
       });
     }
   }
@@ -5882,6 +6082,10 @@ Vue.component('form-promo-app', (__webpack_require__(/*! ./components/FormPromoA
 Vue.component('form-promo-marketing', (__webpack_require__(/*! ./components/FormPromoMarketing.vue */ "./resources/js/components/FormPromoMarketing.vue")["default"]));
 Vue.component('form-promo', (__webpack_require__(/*! ./components/FormPromoApp.vue */ "./resources/js/components/FormPromoApp.vue")["default"]));
 Vue.component('form-create-question', (__webpack_require__(/*! ./components/FormCreateQuestion.vue */ "./resources/js/components/FormCreateQuestion.vue")["default"]));
+Vue.component('filters', (__webpack_require__(/*! ./components/Filters.vue */ "./resources/js/components/Filters.vue")["default"]));
+Vue.component('promo-list', (__webpack_require__(/*! ./components/PromoList.vue */ "./resources/js/components/PromoList.vue")["default"]));
+Vue.component('box', (__webpack_require__(/*! ./components/Box.vue */ "./resources/js/components/Box.vue")["default"]));
+Vue.component('list', (__webpack_require__(/*! ./components/VueList.vue */ "./resources/js/components/VueList.vue")["default"]));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -28437,6 +28641,82 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./resources/js/components/Box.vue":
+/*!*****************************************!*\
+  !*** ./resources/js/components/Box.vue ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Box_vue_vue_type_template_id_1a0a3830___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Box.vue?vue&type=template&id=1a0a3830& */ "./resources/js/components/Box.vue?vue&type=template&id=1a0a3830&");
+/* harmony import */ var _Box_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Box.vue?vue&type=script&lang=js& */ "./resources/js/components/Box.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Box_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Box_vue_vue_type_template_id_1a0a3830___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Box_vue_vue_type_template_id_1a0a3830___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Box.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Filters.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Filters.vue ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Filters_vue_vue_type_template_id_b9055040___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Filters.vue?vue&type=template&id=b9055040& */ "./resources/js/components/Filters.vue?vue&type=template&id=b9055040&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _Filters_vue_vue_type_template_id_b9055040___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Filters_vue_vue_type_template_id_b9055040___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Filters.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/FormCreateQuestion.vue":
 /*!********************************************************!*\
   !*** ./resources/js/components/FormCreateQuestion.vue ***!
@@ -28593,6 +28873,100 @@ component.options.__file = "resources/js/components/FormPromoWeb.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/PromoList.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/components/PromoList.vue ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _PromoList_vue_vue_type_template_id_245389f2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PromoList.vue?vue&type=template&id=245389f2& */ "./resources/js/components/PromoList.vue?vue&type=template&id=245389f2&");
+/* harmony import */ var _PromoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PromoList.vue?vue&type=script&lang=js& */ "./resources/js/components/PromoList.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PromoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PromoList_vue_vue_type_template_id_245389f2___WEBPACK_IMPORTED_MODULE_0__.render,
+  _PromoList_vue_vue_type_template_id_245389f2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/PromoList.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/VueList.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/VueList.vue ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _VueList_vue_vue_type_template_id_1cf0baae___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VueList.vue?vue&type=template&id=1cf0baae& */ "./resources/js/components/VueList.vue?vue&type=template&id=1cf0baae&");
+/* harmony import */ var _VueList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VueList.vue?vue&type=script&lang=js& */ "./resources/js/components/VueList.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _VueList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _VueList_vue_vue_type_template_id_1cf0baae___WEBPACK_IMPORTED_MODULE_0__.render,
+  _VueList_vue_vue_type_template_id_1cf0baae___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/VueList.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Box.vue?vue&type=script&lang=js&":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Box.vue?vue&type=script&lang=js& ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Box_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Box.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Box.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Box_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/FormCreateQuestion.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************!*\
   !*** ./resources/js/components/FormCreateQuestion.vue?vue&type=script&lang=js& ***!
@@ -28654,6 +29028,72 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPromoWeb_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FormPromoWeb.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FormPromoWeb.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPromoWeb_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/PromoList.vue?vue&type=script&lang=js&":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/PromoList.vue?vue&type=script&lang=js& ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PromoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PromoList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PromoList.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PromoList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/VueList.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/VueList.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VueList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./VueList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/VueList.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VueList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Box.vue?vue&type=template&id=1a0a3830&":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/Box.vue?vue&type=template&id=1a0a3830& ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Box_vue_vue_type_template_id_1a0a3830___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Box_vue_vue_type_template_id_1a0a3830___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Box_vue_vue_type_template_id_1a0a3830___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Box.vue?vue&type=template&id=1a0a3830& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Box.vue?vue&type=template&id=1a0a3830&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Filters.vue?vue&type=template&id=b9055040&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Filters.vue?vue&type=template&id=b9055040& ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Filters_vue_vue_type_template_id_b9055040___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Filters_vue_vue_type_template_id_b9055040___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Filters_vue_vue_type_template_id_b9055040___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Filters.vue?vue&type=template&id=b9055040& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Filters.vue?vue&type=template&id=b9055040&");
+
 
 /***/ }),
 
@@ -28721,6 +29161,319 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPromoWeb_vue_vue_type_template_id_468fbfd8___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormPromoWeb_vue_vue_type_template_id_468fbfd8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FormPromoWeb.vue?vue&type=template&id=468fbfd8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FormPromoWeb.vue?vue&type=template&id=468fbfd8&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/PromoList.vue?vue&type=template&id=245389f2&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/PromoList.vue?vue&type=template&id=245389f2& ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PromoList_vue_vue_type_template_id_245389f2___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PromoList_vue_vue_type_template_id_245389f2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PromoList_vue_vue_type_template_id_245389f2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PromoList.vue?vue&type=template&id=245389f2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PromoList.vue?vue&type=template&id=245389f2&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/VueList.vue?vue&type=template&id=1cf0baae&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/VueList.vue?vue&type=template&id=1cf0baae& ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VueList_vue_vue_type_template_id_1cf0baae___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VueList_vue_vue_type_template_id_1cf0baae___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VueList_vue_vue_type_template_id_1cf0baae___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./VueList.vue?vue&type=template&id=1cf0baae& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/VueList.vue?vue&type=template&id=1cf0baae&");
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Box.vue?vue&type=template&id=1a0a3830&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Box.vue?vue&type=template&id=1a0a3830& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "row", staticStyle: { "margin-top": "20px" } },
+    [
+      _c("div", { staticClass: "col-lg-12" }, [
+        _c(
+          "div",
+          { staticClass: "card bottom-line", staticStyle: { width: "100%" } },
+          [
+            _c("div", { staticClass: "card-body" }, [
+              _c("div", { staticClass: "container-fluid" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-lg-4" }, [
+                    _c("img", {
+                      staticClass: "img-fluid",
+                      attrs: {
+                        src: "../images/" + _vm.item.image,
+                        alt: "Card image cap",
+                      },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-8" }, [
+                    _c("div", { staticClass: "container-fluid" }, [
+                      _c(
+                        "h3",
+                        {
+                          staticClass: "card-title",
+                          staticStyle: { "text-align": "center" },
+                        },
+                        [_vm._v(_vm._s(_vm.item.title))]
+                      ),
+                      _vm._v(" "),
+                      _c("hr"),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-lg-8" }, [
+                          _c("p", { staticClass: "card-text" }, [
+                            _vm._v(_vm._s(_vm.item.description)),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-lg-4" }, [
+                          _c(
+                            "div",
+                            { staticClass: "card promo-action-card left-line" },
+                            [
+                              _c("div", { staticClass: "card-body" }, [
+                                _c(
+                                  "h2",
+                                  {
+                                    staticClass: "card-title",
+                                    staticStyle: { "text-align": "center" },
+                                  },
+                                  [_vm._v(_vm._s(_vm.item.total) + " €")]
+                                ),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-primary",
+                                    on: {
+                                      click: function ($event) {
+                                        return _vm.prova(_vm.item.id)
+                                      },
+                                    },
+                                  },
+                                  [_vm._v("Ti chiamiamo noi")]
+                                ),
+                                _vm._v(" "),
+                                _c("br"),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-success",
+                                    on: {
+                                      click: function ($event) {
+                                        return _vm.prova(_vm.item.id)
+                                      },
+                                    },
+                                  },
+                                  [_vm._v("Richiedi preventivo")]
+                                ),
+                                _vm._v(" "),
+                                _c("br"),
+                                _c("br"),
+                              ]),
+                            ]
+                          ),
+                        ]),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _vm.item.promoMessage !== null
+                      ? _c(
+                          "div",
+                          {
+                            staticClass: "alert alert-info",
+                            attrs: { role: "alert" },
+                          },
+                          [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(_vm.item.promoMessage) +
+                                "\n                            "
+                            ),
+                          ]
+                        )
+                      : _vm._e(),
+                  ]),
+                ]),
+              ]),
+            ]),
+          ]
+        ),
+      ]),
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Filters.vue?vue&type=template&id=b9055040&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Filters.vue?vue&type=template&id=b9055040& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "card top-line",
+      staticStyle: { "margin-top": "30%!important" },
+    },
+    [
+      _c(
+        "div",
+        { staticClass: "container-fluid", staticStyle: { padding: "30px" } },
+        [
+          _c("h2", { staticStyle: { "text-align": "center" } }, [
+            _vm._v("Filtri ricerca"),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row", staticStyle: { "margin-top": "10%" } },
+            [
+              _c("div", { staticClass: "col-lg-6" }, [
+                _c("div", { staticClass: "form-check" }, [
+                  _c("input", {
+                    staticClass: "option-input checkbox",
+                    attrs: { type: "checkbox" },
+                    on: {
+                      click: function ($event) {
+                        return _vm.$emit("sortAsc")
+                      },
+                    },
+                  }),
+                  _c("label", [_vm._v("Prezzo Crescente")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-6" }, [
+                _c("div", { staticClass: "form-check" }, [
+                  _c("input", {
+                    staticClass: "option-input checkbox",
+                    attrs: { type: "checkbox" },
+                    on: {
+                      click: function ($event) {
+                        return _vm.$emit("sortDesc")
+                      },
+                    },
+                  }),
+                  _c("label", [_vm._v("Prezzo Decrescente")]),
+                ]),
+              ]),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "row",
+              staticStyle: { "margin-top": "10%", "margin-bottom": "10%" },
+            },
+            [
+              _c("div", { staticClass: "col-lg-4" }, [
+                _c("div", { staticClass: "form-check" }, [
+                  _c("input", {
+                    staticClass: "option-input checkbox",
+                    attrs: { type: "checkbox" },
+                    on: {
+                      click: function ($event) {
+                        return _vm.$emit("handleFilter", 1)
+                      },
+                    },
+                  }),
+                  _c("label", [_vm._v("Tag1")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-4" }, [
+                _c("div", { staticClass: "form-check" }, [
+                  _c("input", {
+                    staticClass: "option-input checkbox",
+                    attrs: { type: "checkbox" },
+                    on: {
+                      click: function ($event) {
+                        return _vm.$emit("handleFilter", 2)
+                      },
+                    },
+                  }),
+                  _c("label", [_vm._v("Tag2")]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-4" }, [
+                _c("div", { staticClass: "form-check" }, [
+                  _c("input", {
+                    staticClass: "option-input checkbox",
+                    attrs: { type: "checkbox" },
+                    on: {
+                      click: function ($event) {
+                        return _vm.$emit("handleFilter", 3)
+                      },
+                    },
+                  }),
+                  _c("label", [_vm._v("Tag3")]),
+                ]),
+              ]),
+            ]
+          ),
+        ]
+      ),
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
 
 
 /***/ }),
@@ -28869,382 +29622,493 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("h2", [_vm._v("Crea Promozione App")]),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        attrs: {
+          method: "POST",
+          action: "/admin/createPromo",
+          enctype: "multipart/form-data",
+        },
+      },
+      [
+        _c("input", {
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { id: "id_section", type: "hidden", name: "id_section" },
+          domProps: { value: _vm.section_id },
+        }),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _vm._m(3),
+        _vm._v(" "),
+        _vm._m(4),
+        _vm._v(" "),
+        _c("h2", [_vm._v("Prezzi Promo")]),
+        _vm._v(" "),
+        _c("h4", [_vm._v("Che tipo di Applicazione?")]),
+        _vm._v(" "),
+        _c("h5", [
+          _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
+        ]),
+        _vm._v(" "),
+        _vm._m(5),
+        _vm._v(" "),
+        _vm._m(6),
+        _vm._v(" "),
+        _vm._m(7),
+        _vm._v(" "),
+        _vm._m(8),
+        _vm._v(" "),
+        _vm._m(9),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("h4", [_vm._v("Scopo dell'App?")]),
+        _vm._v(" "),
+        _c("h5", [
+          _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
+        ]),
+        _vm._v(" "),
+        _vm._m(10),
+        _vm._v(" "),
+        _vm._m(11),
+        _vm._v(" "),
+        _vm._m(12),
+        _vm._v(" "),
+        _vm._m(13),
+        _vm._v(" "),
+        _vm._m(14),
+        _vm._v(" "),
+        _vm._m(15),
+        _vm._v(" "),
+        _vm._m(16),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("h4", [_vm._v("Hai bisogno anche di : ")]),
+        _vm._v(" "),
+        _c("h5", [
+          _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
+        ]),
+        _vm._v(" "),
+        _vm._m(17),
+        _vm._v(" "),
+        _vm._m(18),
+        _vm._v(" "),
+        _vm._m(19),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            staticStyle: { "background-color": "green" },
+            attrs: { type: "submit" },
+          },
+          [_vm._v("Crea Promo")]
+        ),
+      ]
+    ),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h2", [_vm._v("Crea Promozione App")]),
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "title" } }, [_vm._v("Nome Promo")]),
       _vm._v(" "),
-      _c(
-        "form",
-        {
-          attrs: {
-            method: "POST",
-            action: "/admin/createPromo",
-            enctype: "multipart/form-data",
-          },
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "title",
+          type: "text",
+          name: "title",
+          required: "",
+          placeholder: "Insersci testo domanda",
         },
-        [
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "title" } }, [_vm._v("Nome Promo")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "title",
-                type: "text",
-                name: "title",
-                placeholder: "Insersci testo domanda",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "description" } }, [
-              _vm._v("Descrizone Promo"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "description",
-                type: "text",
-                name: "description",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "score" } }, [_vm._v("Score Offerta")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "score",
-                type: "text",
-                name: "score",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "image" } }, [
-              _vm._v("Immagine Promo"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "image",
-                type: "file",
-                name: "image",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "image" } }, [
-              _vm._v("Messaggio promozionale"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "promoMessage",
-                type: "text",
-                name: "promoMessage",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("h2", [_vm._v("Prezzi Promo")]),
-          _vm._v(" "),
-          _c("h4", [_vm._v("Che tipo di Applicazione?")]),
-          _vm._v(" "),
-          _c("h5", [
-            _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeApp1" } }, [_vm._v("Android")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeApp1",
-                type: "text",
-                name: "typeApp1",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeApp2" } }, [
-              _vm._v("IOS (Apple)"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeApp2",
-                type: "text",
-                name: "typeApp2",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeApp3" } }, [
-              _vm._v("Android + IOS"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeApp3",
-                type: "text",
-                name: "typeApp3",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeApp4" } }, [_vm._v("Ibrida")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeApp4",
-                type: "text",
-                name: "typeApp4",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeApp5" } }, [_vm._v("Altro")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeApp5",
-                type: "text",
-                name: "typeApp5",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("h4", [_vm._v("Scopo dell'App?")]),
-          _vm._v(" "),
-          _c("h5", [
-            _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "infoApp1" } }, [
-              _vm._v("Gioco per uso privato"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "infoApp1",
-                type: "text",
-                name: "infoApp1",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "infoApp2" } }, [
-              _vm._v("Per business"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "infoApp2",
-                type: "text",
-                name: "infoApp2",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "infoApp3" } }, [
-              _vm._v("Social network / community"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "infoApp3",
-                type: "text",
-                name: "infoApp3",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "infoApp4" } }, [_vm._v("E-commerce")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "infoApp4",
-                type: "text",
-                name: "infoApp4",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "infoApp5" } }, [_vm._v("Servizio")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "infoApp5",
-                type: "text",
-                name: "infoApp5",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "infoApp6" } }, [
-              _vm._v("Multimedia (immagini, video)"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "infoApp6",
-                type: "text",
-                name: "infoApp6",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "infoApp7" } }, [
-              _vm._v("Prototipo MVP"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "infoApp7",
-                type: "text",
-                name: "infoApp7",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("h4", [_vm._v("Hai bisogno anche di : ")]),
-          _vm._v(" "),
-          _c("h5", [
-            _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "addService1" } }, [
-              _vm._v("Creazione profilo degli utenti"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "addService1",
-                type: "text",
-                name: "addService1",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "addService2" } }, [
-              _vm._v("Promozione su marketplaces"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "addService2",
-                type: "text",
-                name: "addService2",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "addService3" } }, [
-              _vm._v("Multilingua"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "addService3",
-                type: "text",
-                name: "addService3",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary",
-              staticStyle: { "background-color": "green" },
-              attrs: { type: "submit" },
-            },
-            [_vm._v("Crea Promo")]
-          ),
-        ]
-      ),
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "description" } }, [
+        _vm._v("Descrizone Promo"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "description",
+          type: "text",
+          name: "description",
+          required: "",
+          placeholder: "Inserisci descrizione",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "score" } }, [_vm._v("Score Offerta")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "score",
+          type: "text",
+          name: "score",
+          required: "",
+          placeholder: "Inserisci score offerrta",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "image" } }, [_vm._v("Immagine Promo")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { id: "image", type: "file", required: "", name: "image" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "image" } }, [
+        _vm._v("Messaggio promozionale"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "promoMessage",
+          type: "text",
+          name: "promoMessage",
+          required: "",
+          placeholder: "Inserisci messaggio promozionale",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeApp1" } }, [_vm._v("Android")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeApp1",
+          type: "text",
+          name: "typeApp1",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeApp2" } }, [_vm._v("IOS (Apple)")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeApp2",
+          type: "text",
+          name: "typeApp2",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeApp3" } }, [_vm._v("Android + IOS")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeApp3",
+          type: "text",
+          name: "typeApp3",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeApp4" } }, [_vm._v("Ibrida")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeApp4",
+          type: "text",
+          name: "typeApp4",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeApp5" } }, [_vm._v("Altro")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeApp5",
+          type: "text",
+          name: "typeApp5",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "infoApp1" } }, [
+        _vm._v("Gioco per uso privato"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "infoApp1",
+          type: "text",
+          name: "infoApp1",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "infoApp2" } }, [_vm._v("Per business")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "infoApp2",
+          type: "text",
+          name: "infoApp2",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "infoApp3" } }, [
+        _vm._v("Social network / community"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "infoApp3",
+          type: "text",
+          name: "infoApp3",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "infoApp4" } }, [_vm._v("E-commerce")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "infoApp4",
+          type: "text",
+          name: "infoApp4",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "infoApp5" } }, [_vm._v("Servizio")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "infoApp5",
+          type: "text",
+          name: "infoApp5",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "infoApp6" } }, [
+        _vm._v("Multimedia (immagini, video)"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "infoApp6",
+          type: "text",
+          name: "infoApp6",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "infoApp7" } }, [_vm._v("Prototipo MVP")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "infoApp7",
+          type: "text",
+          name: "infoApp7",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "addService1" } }, [
+        _vm._v("Creazione profilo degli utenti"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "addService1",
+          type: "text",
+          name: "addService1",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "addService2" } }, [
+        _vm._v("Promozione su marketplaces"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "addService2",
+          type: "text",
+          name: "addService2",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "addService3" } }, [_vm._v("Multilingua")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "addService3",
+          type: "text",
+          name: "addService3",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
     ])
   },
 ]
@@ -29270,127 +30134,165 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("h2", [_vm._v("Crea Promozione Marketing")]),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        attrs: {
+          method: "POST",
+          action: "/admin/createPromo",
+          enctype: "multipart/form-data",
+        },
+      },
+      [
+        _c("input", {
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { id: "id_section", type: "hidden", name: "id_section" },
+          domProps: { value: _vm.section_id },
+        }),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _vm._m(3),
+        _vm._v(" "),
+        _vm._m(4),
+        _vm._v(" "),
+        _vm._m(5),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            staticStyle: { "background-color": "green" },
+            attrs: { type: "submit" },
+          },
+          [_vm._v("Crea Promo")]
+        ),
+      ]
+    ),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h2", [_vm._v("Crea Promozione Marketing")]),
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "title" } }, [_vm._v("Nome Promo")]),
       _vm._v(" "),
-      _c(
-        "form",
-        {
-          attrs: {
-            method: "POST",
-            action: "/admin/createPromo",
-            enctype: "multipart/form-data",
-          },
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "title",
+          type: "text",
+          name: "title",
+          required: "",
+          placeholder: "Insersci testo domanda",
         },
-        [
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "title" } }, [_vm._v("Nome Promo")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "title",
-                type: "text",
-                name: "title",
-                placeholder: "Insersci testo domanda",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "description" } }, [
-              _vm._v("Descrizone Promo"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "description",
-                type: "text",
-                name: "description",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "score" } }, [_vm._v("Score Offerta")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "score",
-                type: "text",
-                name: "score",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "image" } }, [
-              _vm._v("Immagine Promo"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "image",
-                type: "file",
-                name: "image",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "price" } }, [_vm._v("Prezzo")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "price",
-                type: "text",
-                name: "price",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "image" } }, [
-              _vm._v("Messaggio promozionale"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "promoMessage",
-                type: "text",
-                name: "promoMessage",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary",
-              staticStyle: { "background-color": "green" },
-              attrs: { type: "submit" },
-            },
-            [_vm._v("Crea Promo")]
-          ),
-        ]
-      ),
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "description" } }, [
+        _vm._v("Descrizone Promo"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "description",
+          type: "text",
+          name: "description",
+          required: "",
+          placeholder: "Inserisci descrizione",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "score" } }, [_vm._v("Score Offerta")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "score",
+          type: "text",
+          name: "score",
+          required: "",
+          placeholder: "Inserisci score offerta",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "image" } }, [_vm._v("Immagine Promo")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { id: "image", type: "file", name: "image", required: "" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "price" } }, [_vm._v("Prezzo")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "price",
+          type: "text",
+          name: "price",
+          placeholder: "Inserisci prezzo offerta",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "image" } }, [
+        _vm._v("Messaggio promozionale"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "promoMessage",
+          type: "text",
+          name: "promoMessage",
+          placeholder: "Inserisci messaggio promozionale",
+          required: "",
+        },
+      }),
     ])
   },
 ]
@@ -29416,510 +30318,752 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("h2", [_vm._v("Crea Promozione Per la sezione Web")]),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        attrs: {
+          method: "POST",
+          action: "/admin/createPromo",
+          enctype: "multipart/form-data",
+        },
+      },
+      [
+        _c("input", {
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { id: "id_section", type: "hidden", name: "id_section" },
+          domProps: { value: _vm.section_id },
+        }),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _vm._m(3),
+        _vm._v(" "),
+        _vm._m(4),
+        _vm._v(" "),
+        _c("h2", [_vm._v("Prezzi Promo")]),
+        _vm._v(" "),
+        _c("h4", [_vm._v("Che tipo di sito?")]),
+        _vm._v(" "),
+        _c("h5", [
+          _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
+        ]),
+        _vm._v(" "),
+        _vm._m(5),
+        _vm._v(" "),
+        _vm._m(6),
+        _vm._v(" "),
+        _vm._m(7),
+        _vm._v(" "),
+        _vm._m(8),
+        _vm._v(" "),
+        _vm._m(9),
+        _vm._v(" "),
+        _vm._m(10),
+        _vm._v(" "),
+        _vm._m(11),
+        _vm._v(" "),
+        _vm._m(12),
+        _vm._v(" "),
+        _vm._m(13),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("h4", [_vm._v("Quante pagine sono coinvolte?")]),
+        _vm._v(" "),
+        _c("h5", [
+          _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
+        ]),
+        _vm._v(" "),
+        _vm._m(14),
+        _vm._v(" "),
+        _vm._m(15),
+        _vm._v(" "),
+        _vm._m(16),
+        _vm._v(" "),
+        _vm._m(17),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("h4", [_vm._v("Hai bisogno anche di : ")]),
+        _vm._v(" "),
+        _c("h5", [
+          _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
+        ]),
+        _vm._v(" "),
+        _vm._m(18),
+        _vm._v(" "),
+        _vm._m(19),
+        _vm._v(" "),
+        _vm._m(20),
+        _vm._v(" "),
+        _vm._m(21),
+        _vm._v(" "),
+        _vm._m(22),
+        _vm._v(" "),
+        _vm._m(23),
+        _vm._v(" "),
+        _vm._m(24),
+        _vm._v(" "),
+        _vm._m(25),
+        _vm._v(" "),
+        _vm._m(26),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            staticStyle: { "background-color": "green" },
+            attrs: { type: "submit" },
+          },
+          [_vm._v("Crea Promo")]
+        ),
+      ]
+    ),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h2", [_vm._v("Crea Promozione Per la sezione Web")]),
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "title" } }, [_vm._v("Nome Promo")]),
       _vm._v(" "),
-      _c(
-        "form",
-        {
-          attrs: {
-            method: "POST",
-            action: "/admin/createPromo",
-            enctype: "multipart/form-data",
-          },
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "title",
+          type: "text",
+          name: "title",
+          required: "",
+          placeholder: "Insersci testo domanda",
         },
-        [
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "title" } }, [_vm._v("Nome Promo")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "title",
-                type: "text",
-                name: "title",
-                placeholder: "Insersci testo domanda",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "description" } }, [
-              _vm._v("Descrizone Promo"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "description",
-                type: "text",
-                name: "description",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "score" } }, [_vm._v("Score Offerta")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "score",
-                type: "text",
-                name: "score",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "image" } }, [
-              _vm._v("Immagine Promo"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "image",
-                type: "file",
-                name: "image",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "image" } }, [
-              _vm._v("Messaggio promozionale"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "promoMessage",
-                type: "text",
-                name: "promoMessage",
-                placeholder: "Inserisci descrizione",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("h2", [_vm._v("Prezzi Promo")]),
-          _vm._v(" "),
-          _c("h4", [_vm._v("Che tipo di sito?")]),
-          _vm._v(" "),
-          _c("h5", [
-            _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeWeb1" } }, [
-              _vm._v("Sito web personale"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeWeb1",
-                type: "text",
-                name: "typeWeb1",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeWeb2" } }, [
-              _vm._v("BlogSocial network / Community"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeWeb2",
-                type: "text",
-                name: "typeWeb2",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeWeb3" } }, [_vm._v("E-commerce")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeWeb3",
-                type: "text",
-                name: "typeWeb3",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeWeb4" } }, [_vm._v("Newsletter")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeWeb4",
-                type: "text",
-                name: "typeWeb4",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeWeb5" } }, [
-              _vm._v("Sito vetrina"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeWeb5",
-                type: "text",
-                name: "typeWeb5",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeWeb6" } }, [
-              _vm._v("CMS o sezione amministrativa"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeWeb6",
-                type: "text",
-                name: "typeWeb6",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeWeb7" } }, [
-              _vm._v("Pagina di atterraggio"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeWeb7",
-                type: "text",
-                name: "typeWeb7",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeWeb8" } }, [
-              _vm._v("Sito aziendale"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeWeb8",
-                type: "text",
-                name: "typeWeb8",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "typeWeb9" } }, [_vm._v("Altro")]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "typeWeb9",
-                type: "text",
-                name: "typeWeb9",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("h4", [_vm._v("Quante pagine sono coinvolte?")]),
-          _vm._v(" "),
-          _c("h5", [
-            _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "pricePage1" } }, [
-              _vm._v("1-5 pagine"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "pricePage1",
-                type: "text",
-                name: "pricePage1",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "pricePage2" } }, [
-              _vm._v("5-20 pagine"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "pricePage2",
-                type: "text",
-                name: "pricePage2",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "pricePage3" } }, [
-              _vm._v("20-100 pagine"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "pricePage3",
-                type: "text",
-                name: "pricePage3",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "pricePage4" } }, [
-              _vm._v("Più di 100 pagine"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "pricePage4",
-                type: "text",
-                name: "pricePage4",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("h4", [_vm._v("Hai bisogno anche di : ")]),
-          _vm._v(" "),
-          _c("h5", [
-            _vm._v("Inserire i prezzi in valori numerici ( no simboli ) "),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "addService1" } }, [
-              _vm._v("Creazione profilo degli utenti"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "addService1",
-                type: "text",
-                name: "addService1",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "addService2" } }, [
-              _vm._v("Comprare il dominio"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "addService2",
-                type: "text",
-                name: "addService2",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "addService3" } }, [
-              _vm._v("Caricare video"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "addService3",
-                type: "text",
-                name: "addService3",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "addService4" } }, [
-              _vm._v("Caricare immagini"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "addService4",
-                type: "text",
-                name: "addService4",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "addService5" } }, [
-              _vm._v(
-                "Ottimizzare le Keywords e posizionarlo sui motori di ricerca"
-              ),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "addService5",
-                type: "text",
-                name: "addService5",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "addService6" } }, [
-              _vm._v("Sito multilingua"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "addService6",
-                type: "text",
-                name: "addService6",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "addService7" } }, [
-              _vm._v("Gestione server"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "addService7",
-                type: "text",
-                name: "addService7",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "addService8" } }, [
-              _vm._v("Web mobile responsive"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "addService8",
-                type: "text",
-                name: "addService8",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "addService9" } }, [
-              _vm._v("Transazioni con Paypal, carte di credito o altro"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                id: "addService9",
-                type: "text",
-                name: "addService9",
-                placeholder: "Inserisci Prezzo",
-                required: "",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary",
-              staticStyle: { "background-color": "green" },
-              attrs: { type: "submit" },
-            },
-            [_vm._v("Crea Promo")]
-          ),
-        ]
-      ),
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "description" } }, [
+        _vm._v("Descrizone Promo"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "description",
+          type: "text",
+          name: "description",
+          placeholder: "Inserisci descrizione",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "score" } }, [_vm._v("Score Offerta")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "score",
+          type: "text",
+          name: "score",
+          placeholder: "Inserisci score offerta",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "image" } }, [_vm._v("Immagine Promo")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { id: "image", type: "file", name: "image", required: "" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "image" } }, [
+        _vm._v("Messaggio promozionale"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "promoMessage",
+          type: "text",
+          name: "promoMessage",
+          placeholder: "messaggio promozionale",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeWeb1" } }, [
+        _vm._v("Sito web personale"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeWeb1",
+          type: "text",
+          name: "typeWeb1",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeWeb2" } }, [
+        _vm._v("BlogSocial network / Community"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeWeb2",
+          type: "text",
+          name: "typeWeb2",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeWeb3" } }, [_vm._v("E-commerce")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeWeb3",
+          type: "text",
+          name: "typeWeb3",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeWeb4" } }, [_vm._v("Newsletter")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeWeb4",
+          type: "text",
+          name: "typeWeb4",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeWeb5" } }, [_vm._v("Sito vetrina")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeWeb5",
+          type: "text",
+          name: "typeWeb5",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeWeb6" } }, [
+        _vm._v("CMS o sezione amministrativa"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeWeb6",
+          type: "text",
+          name: "typeWeb6",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeWeb7" } }, [
+        _vm._v("Pagina di atterraggio"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeWeb7",
+          type: "text",
+          name: "typeWeb7",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeWeb8" } }, [_vm._v("Sito aziendale")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeWeb8",
+          type: "text",
+          name: "typeWeb8",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "typeWeb9" } }, [_vm._v("Altro")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "typeWeb9",
+          type: "text",
+          name: "typeWeb9",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "pricePage1" } }, [_vm._v("1-5 pagine")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "pricePage1",
+          type: "text",
+          name: "pricePage1",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "pricePage2" } }, [_vm._v("5-20 pagine")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "pricePage2",
+          type: "text",
+          name: "pricePage2",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "pricePage3" } }, [_vm._v("20-100 pagine")]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "pricePage3",
+          type: "text",
+          name: "pricePage3",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "pricePage4" } }, [
+        _vm._v("Più di 100 pagine"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "pricePage4",
+          type: "text",
+          name: "pricePage4",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "addService1" } }, [
+        _vm._v("Creazione profilo degli utenti"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "addService1",
+          type: "text",
+          name: "addService1",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "addService2" } }, [
+        _vm._v("Comprare il dominio"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "addService2",
+          type: "text",
+          name: "addService2",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "addService3" } }, [
+        _vm._v("Caricare video"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "addService3",
+          type: "text",
+          name: "addService3",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "addService4" } }, [
+        _vm._v("Caricare immagini"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "addService4",
+          type: "text",
+          name: "addService4",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "addService5" } }, [
+        _vm._v("Ottimizzare le Keywords e posizionarlo sui motori di ricerca"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "addService5",
+          type: "text",
+          name: "addService5",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "addService6" } }, [
+        _vm._v("Sito multilingua"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "addService6",
+          type: "text",
+          name: "addService6",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "addService7" } }, [
+        _vm._v("Gestione server"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "addService7",
+          type: "text",
+          name: "addService7",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "addService8" } }, [
+        _vm._v("Web mobile responsive"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "addService8",
+          type: "text",
+          name: "addService8",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "addService9" } }, [
+        _vm._v("Transazioni con Paypal, carte di credito o altro"),
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          id: "addService9",
+          type: "text",
+          name: "addService9",
+          placeholder: "Inserisci Prezzo",
+          required: "",
+        },
+      }),
     ])
   },
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PromoList.vue?vue&type=template&id=245389f2&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PromoList.vue?vue&type=template&id=245389f2& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container" },
+    _vm._l(_vm.listdata, function (product) {
+      return _c("box", { key: product.id, attrs: { item: product } })
+    }),
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/VueList.vue?vue&type=template&id=1cf0baae&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/VueList.vue?vue&type=template&id=1cf0baae& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "container-fluid",
+      staticStyle: { "padding-left": "4vw", "padding-right": "4vw" },
+    },
+    [
+      _c("div", { staticClass: "row" }, [
+        _c("h1", { staticStyle: { "text-align": "center" } }, [
+          _vm._v("Offerte Disponibili"),
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-md-4" },
+          [
+            _c("filters", {
+              on: {
+                handleFilter: _vm.handleFilter,
+                sortAsc: _vm.sortAsc,
+                sortDesc: _vm.sortDesc,
+              },
+            }),
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-md-8" },
+          [_c("promo-list", { attrs: { listdata: _vm.products } })],
+          1
+        ),
+      ]),
+    ]
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -42090,7 +43234,7 @@ Vue.compile = compileToFunctions;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_from":"axios@0.21.4"}');
 
 /***/ })
 

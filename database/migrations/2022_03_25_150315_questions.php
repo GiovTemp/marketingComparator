@@ -21,7 +21,7 @@ class Questions extends Migration
             $table->longText('answers');
             $table->integer('order');
             $table->integer('id_section');
-            $table->boolean('price')->default(false);
+            $table->string('price')->nullable();
         });
     }
 
