@@ -28,6 +28,17 @@
     display: block;
 }
 
+.btn-rounded2 {
+  position: relative;
+  padding: 0.8375rem 4.375rem 0.8375rem 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  border: 0.1rem solid rgba(255, 255, 255, 0.6);
+  background-color: rgb(210, 105, 30);
+  display: block;
+  color: white;
+
+}
 .rounded-pill {
     border-radius: 50rem !important;
 }
@@ -63,6 +74,24 @@
     font-size: 1rem;
     line-height: 2.5rem;
 }
+
+.btn-rounded2 span {
+  position: absolute;
+  background-color:#fff ;
+  width: 2.5rem;
+  height: 2.5rem;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.btn-rounded2 span i {
+  color: rgb(210, 105, 30);
+  font-size: 1rem;
+  line-height: 2.5rem;
+}
+
 
 .text-primary {
     --bs-text-opacity: 1;

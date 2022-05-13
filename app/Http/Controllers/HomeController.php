@@ -40,13 +40,12 @@ class HomeController extends Controller
     public function getPromo(Request $request){
 
         $result = $request->all();
-
         $n = sizeof($result) - 4;
         $score = 0;
         $i=1;
         $answers = [];
         $infoPrice = [];
-       
+        $summary = [];
 
         while($i<$n){
 
@@ -57,7 +56,8 @@ class HomeController extends Controller
                 array_push($answers,array('question_id' => $i,'answer_id' => $temp[0]));
 
                 if($temp[2]!=""){
-                    
+                    $q=Question::find($i);
+                    array_push($summary,(array('title'=>$q->title,'answer'=>json_decode($q->answers)[$temp[0]]->text)));
                     array_push($infoPrice,array('type' => $temp[2],'id_answer' => $temp[0]));
 
                 }
@@ -67,7 +67,6 @@ class HomeController extends Controller
             $i++;
 
         }
-
 
         //get Promos
         $promos = DB::table('promos')
@@ -100,14 +99,11 @@ class HomeController extends Controller
         }
       
 
+
         //Store data
        
         $result['answers'] = json_encode($answers);
-
-             
-        return view('listResultsPromo',['promos' => $promos,'results' => json_encode($result)]);
-
-
+        return view('listResultsPromo',['promos' => $promos,'summary'=>$summary,'results' => json_encode($result)]);
 
        
     }
@@ -115,22 +111,24 @@ class HomeController extends Controller
 
     function requestEstimate(Request $request){
 
-        $result = json_decode($request->result);
+        try{
+            $a = new Answer([
+                'name' => $request->results['name'],
+                'surname' => $request->results['surname'],
+                'iva' => $request->results['iva'],
+                'cf' => $request->results['cf'],
+                'email' => $request->results['email'],
+                'results' => $request->results['answers'],
+                'id_promo' =>$request->id_promo,
+                'id_section' =>$request->id_section           
+            ]);
+              
+            $a->save();
+        }catch(Throwable $e){
+            return $e;
+        }    
         
-
-    
-        $a = new Answer([
-            'name' => $result->name,
-            'surname' => $result->surname,
-            'iva' => $result->iva,
-            'cf' => $result->cf,
-            'email' => $result->email,
-            'results' => $result->answers,
-            'id_promo' =>$request->id_promo            
-        ]);
-          
-        $a->save();
-        return view('estimate',['message'=>'Richiesta inviata correttamente!']);
+        return true;
     }
 
 

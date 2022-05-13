@@ -7,7 +7,7 @@
          
                     </div>
                     <div class="col-md-8">    
-                        <promo-list :listdata="products"></promo-list>       
+                        <promo-list :listdata="products" :results="results"></promo-list>       
                     </div>      
                 </div>
             </div>
@@ -22,7 +22,7 @@ export default {
         Filters,
         PromoList
       },
-    props: ['promos'],
+    props: ['promos','imgSrc','results'],
       mounted() {
           this.state.products=this.promos;
           this.products=this.promos;

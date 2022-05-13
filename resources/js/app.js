@@ -24,15 +24,25 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.use(VueFormulate)
-Vue.component('form-promo-web', require('./components/FormPromoWeb.vue').default);
-Vue.component('form-promo-app', require('./components/FormPromoApp.vue').default);
-Vue.component('form-promo-marketing', require('./components/FormPromoMarketing.vue').default);
-Vue.component('form-promo', require('./components/FormPromoApp.vue').default);
-Vue.component('form-create-question', require('./components/FormCreateQuestion.vue').default);
-Vue.component('filters', require('./components/Filters.vue').default);
-Vue.component('promo-list', require('./components/PromoList.vue').default);
-Vue.component('box', require('./components/Box.vue').default);
-Vue.component('list', require('./components/VueList.vue').default);
+Vue.component('form-promo-web', require('./components/promo/FormPromoWeb.vue').default);
+Vue.component('form-promo-web-edit', require('./components/promo/FormPromoWebEdit.vue').default);
+
+Vue.component('form-promo-app', require('./components/promo/FormPromoApp.vue').default);
+Vue.component('form-promo-app-edit', require('./components/promo/FormPromoAppEdit.vue').default);
+
+Vue.component('form-promo-marketing', require('./components/promo/FormPromoMarketing.vue').default);
+Vue.component('form-promo-marketing-edit', require('./components/promo/FormPromoMarketingEdit.vue').default);
+
+Vue.component('form-promo', require('./components/promo/FormPromoDefault.vue').default);
+Vue.component('form-promo-edit', require('./components/promo/FormPromoDefaultEdit.vue').default);
+
+Vue.component('form-create-question', require('./components/question/FormCreateQuestion.vue').default);
+Vue.component('form-edit-question', require('./components//question/FormEditQuestion.vue').default);
+
+Vue.component('filters', require('./components/list/Filters.vue').default);
+Vue.component('promo-list', require('./components/list/PromoList.vue').default);
+Vue.component('box', require('./components/list/Box.vue').default);
+Vue.component('list', require('./components/list/VueList.vue').default);
 
 
 /**

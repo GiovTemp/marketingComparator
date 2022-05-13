@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <box v-for="product in listdata " :key="product.id" v-bind:item="product"></box>
+        <box v-for="product in listdata " :key="product.id" :results="results" v-bind:item="product"></box>
     </div>
 </template>
 
@@ -9,7 +9,7 @@ import Box from './Box.vue'
 export default {
   components: { Box },
 props:[
-        'listdata'
+        'listdata','results'
     ],
 }
 </script>

@@ -7,7 +7,7 @@
   
                 <div class="form-group">
                     <label for="title">Nome Promo</label>
-                    <input id="title" type="text" name="title" class="form-control" required placeholder="Insersci testo domanda">
+                    <input id="title" type="text" name="title" class="form-control" required placeholder="Insersci titolo Promozione">
                                    </div>
 
                 <div class="form-group">

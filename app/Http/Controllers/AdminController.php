@@ -9,6 +9,7 @@ use App\Models\Promo;
 use App\Models\Section;
 use File;
 use Illuminate\Support\Str;
+use URL;
 
 
 class AdminController extends Controller
@@ -103,7 +104,7 @@ class AdminController extends Controller
         $questionToDelete= Question::find($id);
         Question::where('order','>',$questionToDelete->order)->decrement('order');
         $questionToDelete->delete();  
-        return redirect('/admin');      
+        return back();      
         
     }
 
@@ -118,8 +119,7 @@ class AdminController extends Controller
         }else{
             dd('prima domanda');
         }
-        return redirect('/admin');     
-
+        return back();      
     }
 
     public function downQuestion($id,$pos){        
@@ -133,8 +133,8 @@ class AdminController extends Controller
         }else{
             dd('ultima domanda');
         }
-        return redirect('/admin');       
-   }
+        return back();         
+    }
 
     
     /**
@@ -153,8 +153,14 @@ class AdminController extends Controller
      * @return void
      */
     public function EditQuestion(Request $request){
-        Question::find($request->id)->update($request->all());
-        return redirect('/admin');       
+        try{
+            Question::find($request->question['id'])->update($request->question);
+        }catch(Throwable $e){
+            return $e;
+        }
+       
+        return true;
+     
     }
 
         /**
@@ -245,7 +251,7 @@ class AdminController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'score' => $request->score,
-            'image' => $newImageName,
+            'image' => URL::asset('images').'/'.$newImageName,
             'id_section' => $request->id_section
         ]);
 
@@ -264,8 +270,7 @@ class AdminController extends Controller
 
         $p->save();
 
-        return redirect('/admin');
-        
+        return back();              
 
     }
 
@@ -275,8 +280,10 @@ class AdminController extends Controller
      * @return void
      */
     public function showViewPromo($id){
-        $p = Promo::find($id);
-        return view('admin/promo/view',['promo' => $p]);
+        $p = Promo::find($id)->get();
+        $p[0]->total = "500";
+
+        return view('admin/promo/view',['promos' => $p]);
     }
 
     public function deletePromo($id){
@@ -285,8 +292,7 @@ class AdminController extends Controller
         $imgPath='images/'.$promoToDelete->image;
         self::deletePhoto($imgPath);
         $promoToDelete->delete();
-        return redirect('/admin');  
-
+        return back();      
     }
 
     
@@ -303,8 +309,7 @@ class AdminController extends Controller
         $promoToEdit->isPremium=true;
         $promoToEdit->update();
 
-        return redirect('/admin');  
-
+        return back();      
     }
      
     /**
@@ -313,7 +318,7 @@ class AdminController extends Controller
      * @return void
      */
     public function showEditPromo($id){
-        $promo = Promo::find($id);
+        $promo = Promo::find($id); 
         return view('admin/promo/edit',['promo' => $promo]);
     }
 
@@ -323,28 +328,94 @@ class AdminController extends Controller
      * @return void
      */
     public function EditPromo(Request $request){
-        $promoToEdit= Promo::find($request->id);
+        $p= Promo::find($request->id);
+        $i=1;
         
+        $result =$request->all();
+ 
+
+        if($request->id_section==1){
+
+            $infoPrice = [
+                'typeWeb' => [],
+                'pricePage' => [],
+                'addService' => [],
+            ];
+            while(isset($result['typeWeb'.$i])){
+                array_push($infoPrice['typeWeb'],$result['typeWeb'.$i]);
+                $i++;
+            }
+            $i=1;
+            while(isset($result['pricePage'.$i])){
+                array_push($infoPrice['pricePage'],$result['pricePage'.$i]);
+                $i++;
+            }
+            $i=1;
+            while(isset($result['addService'.$i])){
+                array_push($infoPrice['addService'],$result['addService'.$i]);
+                $i++;
+            }
+
+        }else if($request->id_section==3){
+
+            $infoPrice = [
+                'typeApp' => [],
+                'infoApp' => [],
+                'addService' => [],
+            ];
+            while(isset($result['typeApp'.$i])){
+                array_push($infoPrice['typeApp'],$result['typeApp'.$i]);
+                $i++;
+            }
+            $i=1;
+            while(isset($result['infoApp'.$i])){
+                array_push($infoPrice['infoApp'],$result['infoApp'.$i]);
+                $i++;
+            }
+            $i=1;
+            while(isset($result['addService'.$i])){
+                array_push($infoPrice['addService'],$result['addService'.$i]);
+                $i++;
+            }
+
+        }
+
+
+ 
+        if(isset($request->price)){
+            $p->price = $request->price;
+        }
+        
+        if(isset($infoPrice)){
+            $p->price = json_encode($infoPrice);
+        }
+
+        if(isset($request->promoMessage)){
+        
+            $p->promoMessage = $request->promoMessage;
+        }else{
+            $p->promoMessage=null;
+        }
+
+
         if($request->hasFile('image')){
-            if($request->image->getClientOriginalName()!==$promoToEdit->image){
-                $imgPath='images/'.$promoToEdit->image;
+            if($request->image->getClientOriginalName()!==$p->image){
+                $imgPath='images/'.$p->image;
                 self::deletePhoto($imgPath);
         
                 $newImageName = time().'-'.$request->title . '.'.$request->image->extension();
                 self::uploadPhoto($request->image,$newImageName);
-                $promoToEdit->image = $newImageName;
+                $p->image =URL::asset('images').'/'.$newImageName;
                           
                 
             }
         }
-        $promoToEdit->title=$request->title;
-        $promoToEdit->description=$request->description;
-        $promoToEdit->score=$request->score;
-        $promoToEdit->price=$request->price;
+        $p->title=$request->title;
+        $p->description=$request->description;
+        $p->score=$request->score;
 
-        $promoToEdit->update();  
-        return redirect('/admin');     
-    }
+        $p->update();  
+        return back();          }
     
 
     public function deletePhoto($imgPath){                
@@ -405,8 +476,7 @@ class AdminController extends Controller
 
         $s->save();
 
-        return redirect('/admin');
-        
+        return back();              
 
     }
 

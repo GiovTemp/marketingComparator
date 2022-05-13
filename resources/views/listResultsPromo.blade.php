@@ -18,7 +18,12 @@
                                     <div class="row">
                                         <div class="col-lg-12">
 
-                                            <p class="card-text">Presto Disponibile</p>
+                                            <p class="card-text">
+                                                @foreach ($summary as $s)
+                                                <br><br><b>{{$s['title']}}</b>&nbsp;&nbsp;&nbsp; {{$s['answer']}}
+                                                @endforeach
+                                                <br><br>
+                                            </p>
                                         </div>
 
                                     </div>
@@ -35,7 +40,7 @@
  
 
 <div id="app" >
-  <list style="margin-top:5vw;margin-bottom:5vw;" :promos="{{$promos}}"></list>
+  <list style="margin-top:5vw;margin-bottom:5vw;" :promos="{{$promos}}" :results="{{$results}}"></list>
 </div>
 
 

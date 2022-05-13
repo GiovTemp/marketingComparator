@@ -17,6 +17,6 @@ class Answer extends Model
         'email',
         'results',
         'id_promo',
-        'section_id'
+        'id_section'
     ];
 }
