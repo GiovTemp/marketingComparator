@@ -103,7 +103,7 @@ class HomeController extends Controller
         //Store data
        
         $result['answers'] = json_encode($answers);
-        return view('listResultsPromo',['promos' => $promos,'summary'=>$summary,'results' => json_encode($result)]);
+        return view('listResultsPromo',['promos' => $promos,'summary'=>json_encode($summary),'results' => json_encode($result)]);
 
        
     }

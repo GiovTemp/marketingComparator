@@ -250,6 +250,7 @@ class AdminController extends Controller
         $p = new Promo([
             'title' => $request->title,
             'description' => $request->description,
+            'email' => $request->email,
             'score' => $request->score,
             'image' => URL::asset('images').'/'.$newImageName,
             'id_section' => $request->id_section
@@ -318,7 +319,7 @@ class AdminController extends Controller
      * @return void
      */
     public function showEditPromo($id){
-        $promo = Promo::find($id); 
+        $promo = Promo::find($id);
         return view('admin/promo/edit',['promo' => $promo]);
     }
 
@@ -411,11 +412,13 @@ class AdminController extends Controller
             }
         }
         $p->title=$request->title;
+        $p->email=$request->email;
         $p->description=$request->description;
         $p->score=$request->score;
 
         $p->update();  
-        return back();          }
+        return back();
+    }
     
 
     public function deletePhoto($imgPath){                

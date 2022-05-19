@@ -15,7 +15,13 @@
                           <input class="form-control" id="description" type="text" name="description" required placeholder="Inserisci descrizione">
                           
                       </div>
+                      
 
+                <div class="form-group">
+                    <label for="description">Email autore promo </label>
+                    <input class="form-control" id="email" type="text" name="email" placeholder="Inserisci indirizzo email al quale recapitare le richieste" required>
+                  
+                </div>
                       
                       <div class="form-group">
                           <label for="score">Score Offerta</label>
@@ -24,8 +30,13 @@
 
                       <div class="form-group">
                           <label for="image">Immagine Promo</label>
-                          <input class="form-control" id="image" type="file" name="image" required>
-                        
+                          <div class="drag-image">
+                          <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                          <h6>Drag & Drop File Here</h6>
+                          <span>OR</span>
+                          <button>Browse File</button>
+                          <input id="image" name="image" type="file" hidden required>
+                        </div>
                       </div>
 
                       <div class="form-group">

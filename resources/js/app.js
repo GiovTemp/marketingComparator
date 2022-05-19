@@ -8,6 +8,25 @@ require('./bootstrap');
 
 import VueFormulate from '@braid/vue-formulate'
 
+/* import the fontawesome core */
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+/* import specific icons */
+import { faPhone} from '@fortawesome/free-solid-svg-icons'
+/* import specific icons */
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+/* import specific icons */
+import { faDownLong } from '@fortawesome/free-solid-svg-icons'
+/* import specific icons */
+import { faUpLong } from '@fortawesome/free-solid-svg-icons'
+
+/* import font awesome icon component */
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+/* add icons to the library */
+library.add(faPhone,faEnvelope,faUpLong,faDownLong)
+
+
 
 
 
@@ -43,6 +62,10 @@ Vue.component('filters', require('./components/list/Filters.vue').default);
 Vue.component('promo-list', require('./components/list/PromoList.vue').default);
 Vue.component('box', require('./components/list/Box.vue').default);
 Vue.component('list', require('./components/list/VueList.vue').default);
+
+Vue.config.productionTip = false
+/* add font awesome icon component */
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 
 /**

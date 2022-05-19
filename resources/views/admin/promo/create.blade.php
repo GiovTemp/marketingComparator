@@ -10,6 +10,7 @@
               <h6 class="text-capitalize">Crea Offerta</h6>
             </div>
             <div class="card-body p-3">
+
             @switch($id_section)
               @case(1)
                 <form-promo-web :section_id="{{$id_section}}" csrf="{{csrf_token()}}"></form-promo-web>
@@ -31,8 +32,6 @@
         </div>
       </div>
     </div>
-
-
 @endsection
 
 

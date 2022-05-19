@@ -16,6 +16,7 @@ class Promos extends Migration
         Schema::create('promos', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('email');
             $table->longText('description');
             $table->string('score');
             $table->string('image');

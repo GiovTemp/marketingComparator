@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Crea Promozione Per la sezione Web</h2>
+
     <form method="POST" action="/admin/editPromo" enctype="multipart/form-data">
         <input type="hidden" name="_token" v-bind:value="csrf">
         <input type="hidden" name="id" v-bind:value="promo.id">
@@ -20,13 +20,37 @@
                 <div class="form-group">
                     <label for="score">Score Offerta</label>
                     <input class="form-control"  :value="promo.score"  id="score" type="text" name="score" placeholder="Inserisci score offerta" required>
-                                   </div>
+                </div>
 
                 <div class="form-group">
-                    <label for="image">Immagine Promo</label>
-                    <input class="form-control" id="image" type="file" name="image">
-                   
+                    <label for="description">Email autore promo </label>
+                    <input class="form-control" :value="promo.email" type="text" name="email" placeholder="Inserisci indirizzo email al quale recapitare le richieste" required>
+                  
                 </div>
+
+
+                      <div class="form-group">
+                        <div class="contaier-fluid">
+                          <div class="row">
+                            <div class="col-lg-4">
+                              <label for="image">Nuova Immagine Promo</label>
+                              <div class="drag-image">
+                                <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                                <h6>Drag & Drop File Here</h6>
+                                <span>OR</span>
+                                <button>Browse File</button>
+                                <input id="image" name="image" type="file" hidden >
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <label for="image">Immagine Utilizzata</label>
+                              <img :src="promo.image" class="img-fluid">
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                      </div>
 
                 <div class="form-group">
                     <label for="image">Messaggio promozionale</label>

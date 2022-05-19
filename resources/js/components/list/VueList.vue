@@ -1,9 +1,9 @@
 <template>
-    <div class="container-fluid" style="padding-left:4vw;padding-right:4vw">
+    <div class="container-fluid d-flex justify-content-center mt-50 mb-50" style="padding-left:4vw;padding-right:4vw">
                 <div class="row">
                 <h1 style="text-align:center">Offerte Disponibili</h1>
                     <div class="col-md-4">
-                        <filters @handleFilter="handleFilter" @sortAsc="sortAsc" @sortDesc="sortDesc"></filters>
+                        <filters @handleFilter="handleFilter" @sortAsc="sortAsc" @sortDesc="sortDesc" :summary="summary"></filters>
          
                     </div>
                     <div class="col-md-8">    
@@ -22,7 +22,7 @@ export default {
         Filters,
         PromoList
       },
-    props: ['promos','imgSrc','results'],
+    props: ['summary','promos','imgSrc','results'],
       mounted() {
           this.state.products=this.promos;
           this.products=this.promos;

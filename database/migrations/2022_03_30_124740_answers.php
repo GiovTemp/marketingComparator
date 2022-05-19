@@ -20,7 +20,7 @@ class Answers extends Migration
             $table->string('iva');
             $table->string('cf');
             $table->string('email');
-            $table->string('results');
+            $table->longText('results');
             $table->integer('id_promo');
             $table->integer('id_section');
             $table->timestamps();

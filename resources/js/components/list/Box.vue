@@ -1,47 +1,46 @@
 <template>
-     <div class="row" style="margin-top:20px;">
+                    
+     <div class="row" style="margin-top:20px;margin-bottom:20px;">
         <div class="col-lg-12">
-            <div class="card bottom-line" style="width: 100%;">          
-                <div class="card-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <img class="img-fluid" :src="item.image"  alt="Card image cap">
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="container-fluid">
-                                    <h3 class="card-title" style="text-align: center;">{{item.title}}</h3>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-lg-7">
-
-                                            <p class="card-text">{{item.description}}</p>
-                                        </div>
-                                        <div class="col-lg-5">
-                                            <div class="card promo-action-card left-line">          
-                                                <div class="card-body">
-                                                    <h2 class="card-title" style="text-align: center;">{{item.total}} €</h2><br>
-                                                    <button class="btn btn-primary" v-on:click="requestCall(item)">Ti chiamiamo noi</button>
-                                                    <br><br>
-                                                    <button class="btn btn-success" v-on:click="prova(item.id)">Richiedi preventivo</button>
-                                                    <br><br>
-                                                </div>
-                                            </div>                                                        
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="alert alert-info" role="alert" v-if="item.promoMessage!==null">
-                                    {{item.promoMessage}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>            
+        <div class="card shadow-0 border rounded-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                  <img :src="item.image" class="w-100" />
                 </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-6">
+                <h5>{{item.title}}</h5>
+
+                <div class="mt-1 mb-0 text-muted small">
+                  <span>Tag 1</span>
+                  <span class="text-primary"> • </span>
+                  <span>Tag 2</span>
+                </div>
+                <p class="mb-4 mb-md-0">
+                    {{item.description}}
+                </p>
+                <div class="alert alert-info" role="alert" v-if="item.promoMessage!==null">
+                    {{item.promoMessage}}
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                <div class="d-flex flex-row align-items-center mb-1">
+                  <h4 class="mb-1 me-1">{{item.total}} €</h4>
+                </div>
+                <div class="d-flex flex-column mt-4">
+                    <button class="btn btn-primary" style="margin-top:10px;margin-bottom:10px;" v-on:click="requestCall(item)">Ti chiamiamo noi &nbsp;&nbsp; <font-awesome-icon icon="fa-solid fa-phone" /></button>
+                    <button class="btn btn-success" style="margin-top:10px;margin-bottom:10px;" v-on:click="prova(item.id)">Richiedi preventivo &nbsp;&nbsp; <font-awesome-icon icon="fa-solid fa-envelope" /></button>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>   
+      </div>
+
+    </div>
+  
 </template>
 
 <script>

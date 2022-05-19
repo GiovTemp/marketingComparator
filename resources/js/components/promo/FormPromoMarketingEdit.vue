@@ -1,42 +1,63 @@
 <template>
   <div>
-    <h2>Crea Promozione Marketing</h2>
       <form method="POST" action="/admin/editPromo" enctype="multipart/form-data">
           <input type="hidden" name="_token" v-bind:value="csrf">
                       <input id="id_section" type="hidden" name="id_section" v-bind:value="section_id">
 
                     <div class="form-group">
                           <label for="title">Nome Promo</label>
-                          <input id="title" type="text" name="title" class="form-control" required placeholder="Insersci testo domanda">
+                          <input id="title" type="text" :value="promo.title" name="title" class="form-control" required placeholder="Insersci testo domanda">
                                         </div>
 
                       <div class="form-group">
                           <label for="description">Descrizone Promo</label>
-                          <input class="form-control" id="description" type="text" name="description" required placeholder="Inserisci descrizione">
+                          <input class="form-control" :value="promo.description" id="description" type="text" name="description" required placeholder="Inserisci descrizione">
                           
                       </div>
+
+                    <div class="form-group">
+                      <label for="description">Email autore promo </label>
+                      <input class="form-control" :value="promo.email" type="text" name="email" placeholder="Inserisci indirizzo email al quale recapitare le richieste" required>
+                    </div>
+                      
 
                       
                       <div class="form-group">
                           <label for="score">Score Offerta</label>
-                          <input class="form-control" id="score" type="text" name="score" required placeholder="Inserisci score offerta">
+                          <input class="form-control" :value="promo.score" id="score" type="text" name="score" required placeholder="Inserisci score offerta">
                                         </div>
-
                       <div class="form-group">
-                          <label for="image">Immagine Promo</label>
-                          <input class="form-control" id="image" type="file" name="image" required>
+                        <div class="contaier-fluid">
+                          <div class="row">
+                            <div class="col-lg-4">
+                              <label for="image">Nuova Immagine Promo</label>
+                              <div class="drag-image">
+                                <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                                <h6>Drag & Drop File Here</h6>
+                                <span>OR</span>
+                                <button>Browse File</button>
+                                <input id="image" name="image" type="file" hidden >
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <label for="image">Immagine Utilizzata</label>
+                              <img :src="promo.image" class="img-fluid">
+                            </div>
+                          </div>
+                        </div>
+                        
                         
                       </div>
 
                       <div class="form-group">
                           <label for="price">Prezzo</label>
-                          <input class="form-control" id="price" type="text" name="price" placeholder="Inserisci prezzo offerta" required>
+                          <input class="form-control" :value="promo.price" id="price" type="text" name="price" placeholder="Inserisci prezzo offerta" required>
                         
                       </div>
 
                       <div class="form-group">
                           <label for="image">Messaggio promozionale</label>
-                          <input class="form-control" id="promoMessage" type="text" name="promoMessage" placeholder="Inserisci messaggio promozionale" required>
+                          <input class="form-control" :value="promo.promoMessage" id="promoMessage" type="text" name="promoMessage" placeholder="Inserisci messaggio promozionale" required>
                         
                       </div>
                             <button type="submit" class="btn btn-primary" style="background-color: green;">Edit Promo</button>
@@ -47,7 +68,7 @@
 <script>
 
 export default {
-    props: ['csrf','section_id'],
+    props: ['csrf','section_id','promo'],
   data: () => ({
     
   }),
