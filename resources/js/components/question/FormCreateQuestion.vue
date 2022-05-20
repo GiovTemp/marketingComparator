@@ -4,7 +4,10 @@
     <FormulateForm v-model="formValues" @submit="handleSubmit">
       <FormulateInput type="submit" label="Crea Domanda" />
       <FormulateInput name="title" label="Testo Domanda" validation="required" />
-      <FormulateInput name="description" label="Descrizione Domanda" validation="required" />      
+      <FormulateInput name="description" label="Descrizione Domanda" validation="required" />
+      <FormulateInput name="is_required" label="Domanda Obbligatoria"/>
+      <FormulateInput name="is_multi" label="Multirisposta" />
+                  
     </FormulateForm>
 
     <FormulateForm v-model="answer" @submit="createAnswer">

@@ -78,12 +78,18 @@ class AdminController extends Controller
                 'title' => $request->question_data['title'],
                 'description' => $request->question_data['description'],
                 'answers' => json_encode($request->answersList),
-                'is_required' => true,
                 'order' => $order,
                 'id_section' => $request->id_section            
             ]);
-    
-   
+
+            if(isset($request->is_required)){
+                $q->is_required = true;
+            }
+       
+            if(isset($request->is_multi)){
+                $q->is_multi = true;
+            }
+
             $q->save();
     
         }catch(Throwable $e){

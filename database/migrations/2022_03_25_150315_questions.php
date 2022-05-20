@@ -17,7 +17,8 @@ class Questions extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->boolean('is_required');
+            $table->boolean('is_required')->default(false);
+            $table->boolean('is_multi')->default(false);
             $table->longText('answers');
             $table->integer('order');
             $table->integer('id_section');

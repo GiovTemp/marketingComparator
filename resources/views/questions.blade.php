@@ -70,7 +70,13 @@
 
               <div class="col-lg-8">
                 @foreach (json_decode($q->answers, true) as $a)
-                  <input type="radio" value={{ $loop->index }}|{{$a['score']}}|{{$q->price}} name={{$q->id}}> {{$a['text']}}<br>
+                  <fieldset required={{$q->is_required}}>
+                    @if ($q->is_multi==1)
+                    <input type="checkbox" value={{ $loop->index }}|{{$a['score']}}|{{$q->price}} name={{$q->id}}> {{$a['text']}}<br>
+                    @else
+                    <input type="radio" value={{ $loop->index }}|{{$a['score']}}|{{$q->price}} name={{$q->id}}> {{$a['text']}}<br>
+                    @endif
+                  </fieldset>
                   @endforeach  
               </div>
             </div>

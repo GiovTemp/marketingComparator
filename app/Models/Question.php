@@ -15,6 +15,7 @@ class Question extends Model
         'title',
         'description',
         'answers',
+        'is_multi',
         'is_required',
         'order',
         'id_section',
