@@ -6,7 +6,7 @@
 
 
 <div id="app" >
-  <list style="margin-top:5vw;margin-bottom:5vw;" :promos="{{$promos}}" :results="{{$results}}" :summary="{{$summary}}"></list>
+  <list style="margin-top:5vw;margin-bottom:5vw;" :premium="{{ $premium ?? 'null'  }}" :promos="{{$promos}}" :results="{{$results}}" :summary="{{$summary}}"></list>
 </div>
 
 

@@ -49,6 +49,10 @@
                         
                       </div>
 
+                <div class="form-check"> <label for="tag1">Tag 1</label> <input type="checkbox" name="tag1" :checked="promo.tag1" class="option-input checkbox"></div>                
+                <div class="form-check"> <label for="tag2">Tag 2</label> <input type="checkbox" name="tag2" :checked="promo.tag2" class="option-input checkbox"></div>                   
+                <div class="form-check"> <label for="tag3">Tag 3</label> <input type="checkbox" name="tag3" :checked="promo.tag3" class="option-input checkbox"></div> 
+
                       <div class="form-group">
                           <label for="price">Prezzo</label>
                           <input class="form-control" :value="promo.price" id="price" type="text" name="price" placeholder="Inserisci prezzo offerta" required>

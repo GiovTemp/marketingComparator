@@ -1,5 +1,8 @@
 <template>
     <div class="container">
+         
+        <premium-box v-if="premium!==null" :results="results" v-bind:item="premium"></premium-box>
+
         <box v-for="product in listdata " :key="product.id" :results="results" v-bind:item="product"></box>
     </div>
 </template>
@@ -9,7 +12,8 @@ import Box from './Box.vue'
 export default {
   components: { Box },
 props:[
-        'listdata','results'
+        'listdata','results','premium'
     ],
+
 }
 </script>

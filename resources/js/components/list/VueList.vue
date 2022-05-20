@@ -1,13 +1,11 @@
 <template>
     <div class="container-fluid d-flex justify-content-center mt-50 mb-50" style="padding-left:4vw;padding-right:4vw">
                 <div class="row">
-                <h1 style="text-align:center">Offerte Disponibili</h1>
                     <div class="col-md-4">
-                        <filters @handleFilter="handleFilter" @sortAsc="sortAsc" @sortDesc="sortDesc" :summary="summary"></filters>
-         
+                        <filters @handleFilter="handleFilter" @sortAsc="sortAsc" @sortDesc="sortDesc" :summary="summary"></filters>       
                     </div>
-                    <div class="col-md-8">    
-                        <promo-list :listdata="products" :results="results"></promo-list>       
+                    <div class="col-md-8">                          
+                        <promo-list :premium="premium" :listdata="products" :results="results"></promo-list>       
                     </div>      
                 </div>
             </div>
@@ -22,7 +20,7 @@ export default {
         Filters,
         PromoList
       },
-    props: ['summary','promos','imgSrc','results'],
+    props: ['premium','summary','promos','imgSrc','results'],
       mounted() {
           this.state.products=this.promos;
           this.products=this.promos;
@@ -81,21 +79,21 @@ export default {
                         flag=false;
     
                         if(this.state.tag1===true){
-                            if(this.state.products[i].tag1===true){
+                            if(this.state.products[i].tag1===1){
                                 this.products.push(this.state.products[i]);
                                 flag=true;
                             }
                         }
     
                         if(this.state.tag2===true && flag===false){
-                            if(this.state.products[i].tag2===true){
+                            if(this.state.products[i].tag2===1){
                                 this.products.push(this.state.products[i]);
                                 flag=true;
                             }
                         }
     
                         if(this.state.tag3===true && flag===false){
-                            if(this.state.products[i].tag3===true){
+                            if(this.state.products[i].tag3===1){
                                 this.products.push(this.state.products[i]);
                                 flag=true;
                             }

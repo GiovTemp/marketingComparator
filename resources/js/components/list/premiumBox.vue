@@ -2,8 +2,8 @@
                     
      <div class="row" style="margin-top:20px;margin-bottom:20px;">
         <div class="col-lg-12">
-        <center><h3>Offerte Disponibili</h3></center>
-        <div class="card shadow-0 border rounded-3">
+        <center><h3><b>Offerta in evidenza</b></h3></center>
+        <div class="card shadow-0 border rounded-3" style="border-color: #e1e7ec !important;border-width: 2px !important;">
           <div class="card-body">
             <div class="row">
               <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">

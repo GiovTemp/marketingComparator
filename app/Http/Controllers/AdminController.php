@@ -269,6 +269,24 @@ class AdminController extends Controller
             $p->promoMessage = $request->promoMessage;
         }
 
+        if(isset($request->tag1)){
+            $p->tag1 = 1;
+        }else{
+            $p->tag1 = 0;
+        }
+
+        if(isset($request->tag2)){
+            $p->tag2 = 1;
+        }else{
+            $p->tag2 = 0;
+        }
+        
+        if(isset($request->tag3)){
+            $p->tag3 = 1;
+        }else{
+            $p->tag3 = 0;
+        }
+
         $p->save();
 
         return back();              
@@ -396,6 +414,24 @@ class AdminController extends Controller
             $p->promoMessage = $request->promoMessage;
         }else{
             $p->promoMessage=null;
+        }
+
+        if(isset($request->tag1)){
+            $p->tag1 = 1;
+        }else{
+            $p->tag1 = 0;
+        }
+
+        if(isset($request->tag2)){
+            $p->tag2 = 1;
+        }else{
+            $p->tag2 = 0;
+        }
+        
+        if(isset($request->tag3)){
+            $p->tag3 = 1;
+        }else{
+            $p->tag3 = 0;
         }
 
 

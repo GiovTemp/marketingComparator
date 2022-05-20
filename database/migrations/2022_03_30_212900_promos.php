@@ -24,6 +24,9 @@ class Promos extends Migration
             $table->string('promoMessage')->nullable();
             $table->boolean('isPremium')->default(false);
             $table->integer('id_section');
+            $table->boolean('tag1')->default(false);
+            $table->boolean('tag2')->default(false);
+            $table->boolean('tag3')->default(false);
             $table->timestamps();
         });
     }

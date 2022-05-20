@@ -19,7 +19,10 @@ class Promo extends Model
         'isPremium',
         'promoMessage',
         'id_section',
-        'id'
+        'id',
+        'tag1',
+        'tag2',
+        'tag3'
     ];
 
 }

@@ -61,6 +61,7 @@ Vue.component('form-edit-question', require('./components//question/FormEditQues
 Vue.component('filters', require('./components/list/Filters.vue').default);
 Vue.component('promo-list', require('./components/list/PromoList.vue').default);
 Vue.component('box', require('./components/list/Box.vue').default);
+Vue.component('premium-box', require('./components/list/premiumBox.vue').default);
 Vue.component('list', require('./components/list/VueList.vue').default);
 
 Vue.config.productionTip = false

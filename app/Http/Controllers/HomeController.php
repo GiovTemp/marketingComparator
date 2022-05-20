@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Question;
 use App\Models\Answer;
 use App\Models\Section;
+use App\Models\Promo;
 use DB;
 
 
@@ -73,7 +74,9 @@ class HomeController extends Controller
             ->select('*', DB::raw("Abs(score - $score) AS column_to_be_order"))
             ->where('id_section',$request->id_section)
             ->orderBy('column_to_be_order')
-            ->get();        
+            ->get();
+            
+        $premium = Promo::where('isPremium',true)->where('id_section',$request->id_section)->first();
         
         $i=0;
         $j=0;
@@ -88,12 +91,18 @@ class HomeController extends Controller
                     $total= $total + $temp->$type[$infoPrice[$j]['id_answer']];                    
                     $j++;
                 }
-                $promos[$i]->total = $total;              
+                $promos[$i]->total = $total;
+                if($promos[$i]->id==$premium->id){
+                    $premium->total = $promos[$i]->total;
+                }              
                 $i++;
             }
         }else{
             while($i<count($promos)){
-                $promos[$i]->total =$promos[$i]->price;              
+                $promos[$i]->total =$promos[$i]->price;
+                if($promos[$i]->id==$premium->id){
+                    $premium->total = $promos[$i]->total;
+                }                 
                 $i++;
             }
         }
@@ -103,7 +112,7 @@ class HomeController extends Controller
         //Store data
        
         $result['answers'] = json_encode($answers);
-        return view('listResultsPromo',['promos' => $promos,'summary'=>json_encode($summary),'results' => json_encode($result)]);
+        return view('listResultsPromo',['premium' => $premium,'promos' => $promos,'summary'=>json_encode($summary),'results' => json_encode($result)]);
 
        
     }
