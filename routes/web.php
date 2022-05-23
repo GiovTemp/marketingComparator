@@ -23,6 +23,11 @@ Route::post('/getPromo', [App\Http\Controllers\HomeController::class, 'getPromo'
 
 Route::post('/requestEstimate', [App\Http\Controllers\HomeController::class, 'requestEstimate']);
 
+
+Route::get('/success', [App\Http\Controllers\HomeController::class, 'showSuccess']);
+
+Route::get('/error', [App\Http\Controllers\HomeController::class, 'showError']);
+
 Route::prefix('admin')->group(function () {
     Route::controller(App\Http\Controllers\AdminController::class)->group(function () {
         Route::get('/', 'index');
@@ -55,4 +60,5 @@ Route::prefix('admin')->group(function () {
         Route::get('/createSection', 'showCreateSection');
         Route::post('/createSection', 'createSection');
     });
+
 });

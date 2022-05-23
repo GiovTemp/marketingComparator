@@ -170,4 +170,11 @@ class HomeController extends Controller
         $sections = Section::all();
         return view('section',['sections' => $sections]);
     }
+
+    public function showSuccess(){
+        return view('message/success');
+    }
+    public function showError(){
+        return view('message/error');
+    }
 }
