@@ -136,20 +136,10 @@ class HomeController extends Controller
         //dd($summary);
 
         $result['answers'] = json_encode($answers);
-        return view('listResultsPromo',['premium' => $premium,'promos' => $promos,'summary'=>json_encode($summary),'results' => json_encode($result)]);
+        $promo = array($promos);
+        return view('listResultsPromo',['premium' => $premium,'promos' => json_encode($promos),'summary'=>json_encode($summary),'results' => json_encode($result)]);
 
        
-    }
-
-    public function listPromos($page,$paginate,$list){
-     
-        if($list===null){
-            return 0;
-        }
-
-        $list->paginate($paginate);
-
-        return PromoResource::collection($list);       
     }
 
 

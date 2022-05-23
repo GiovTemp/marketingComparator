@@ -22,6 +22,7 @@ import { faUpLong } from '@fortawesome/free-solid-svg-icons'
 
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Page from "v-page";
 
 /* add icons to the library */
 library.add(faPhone,faEnvelope,faUpLong,faDownLong)
@@ -66,6 +67,10 @@ Vue.component('list', require('./components/list/VueList.vue').default);
 
 Vue.component('estimate-table', require('./components/table/estimateTable.vue').default);
 Vue.component('pagination', require('laravel-vue-pagination'));
+
+Vue.use(Page, {
+    language: "en"
+  });
 
 
 Vue.config.productionTip = false

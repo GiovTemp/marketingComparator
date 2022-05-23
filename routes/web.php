@@ -23,9 +23,6 @@ Route::post('/getPromo', [App\Http\Controllers\HomeController::class, 'getPromo'
 
 Route::post('/requestEstimate', [App\Http\Controllers\HomeController::class, 'requestEstimate']);
 
-Route::get('/getPromos', [App\Http\Controllers\HomeController::class, 'listPromos']);
-
-
 Route::prefix('admin')->group(function () {
     Route::controller(App\Http\Controllers\AdminController::class)->group(function () {
         Route::get('/', 'index');
