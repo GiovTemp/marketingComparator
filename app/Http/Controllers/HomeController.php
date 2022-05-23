@@ -40,7 +40,9 @@ class HomeController extends Controller
 
     public function getPromo(Request $request){
 
+
         $result = $request->all();
+        
         $n = sizeof($result) - 4;
         $score = 0;
         $i=1;
@@ -51,16 +53,36 @@ class HomeController extends Controller
         while($i<$n){
 
             if(isset($result[$i])){
-                
-                $temp= explode('|',$result[$i]);
-                $score = $score+$temp[1];
-                array_push($answers,array('question_id' => $i,'answer_id' => $temp[0]));
+                if(is_array($result[$i])){
+                    $j=0;
 
-                if($temp[2]!=""){
-                    $q=Question::find($i);
-                    array_push($summary,(array('title'=>$q->title,'answer'=>json_decode($q->answers)[$temp[0]]->text)));
-                    array_push($infoPrice,array('type' => $temp[2],'id_answer' => $temp[0]));
+                    while($j<sizeof($result[$i]) ){
 
+                        $temp= explode('|',$result[$i][$j]);                       
+                        $score = $score+$temp[1];
+                        array_push($answers,array('question_id' => $i,'answer_id' => $temp[0]));
+                        if($temp[2]!=""){
+
+                            $q=Question::find($i);
+                            array_push($summary,(array('title'=>$q->title,'answer'=>json_decode($q->answers)[$temp[0]]->text)));
+                            array_push($infoPrice,array('type' => $temp[2],'id_answer' => $temp[0]));
+        
+                        }
+                        $j++;
+                    }
+
+                }else{
+                    $temp= explode('|',$result[$i]);
+                    $score = $score+$temp[1];
+                    array_push($answers,array('question_id' => $i,'answer_id' => $temp[0]));
+    
+                    if($temp[2]!=""){
+                        $q=Question::find($i);
+                        array_push($summary,(array('title'=>$q->title,'answer'=>json_decode($q->answers)[$temp[0]]->text)));
+                        array_push($infoPrice,array('type' => $temp[2],'id_answer' => $temp[0]));
+    
+                    }
+    
                 }
 
             }
@@ -110,11 +132,24 @@ class HomeController extends Controller
 
 
         //Store data
-       
+        
+        //dd($summary);
+
         $result['answers'] = json_encode($answers);
         return view('listResultsPromo',['premium' => $premium,'promos' => $promos,'summary'=>json_encode($summary),'results' => json_encode($result)]);
 
        
+    }
+
+    public function listPromos($page,$paginate,$list){
+     
+        if($list===null){
+            return 0;
+        }
+
+        $list->paginate($paginate);
+
+        return PromoResource::collection($list);       
     }
 
 

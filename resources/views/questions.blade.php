@@ -70,13 +70,11 @@
 
               <div class="col-lg-8">
                 @foreach (json_decode($q->answers, true) as $a)
-                  <fieldset required={{$q->is_required}}>
                     @if ($q->is_multi==1)
-                    <input type="checkbox" value={{ $loop->index }}|{{$a['score']}}|{{$q->price}} name={{$q->id}}> {{$a['text']}}<br>
+                    <input type="checkbox" value={{ $loop->index }}|{{$a['score']}}|{{$q->price}} name={{$q->id}}[]> {{$a['text']}}<br>
                     @else
-                    <input type="radio" value={{ $loop->index }}|{{$a['score']}}|{{$q->price}} name={{$q->id}}> {{$a['text']}}<br>
+                    <input type="radio" required={{$q->is_required}} value={{ $loop->index }}|{{$a['score']}}|{{$q->price}} name={{$q->id}}> {{$a['text']}}<br>
                     @endif
-                  </fieldset>
                   @endforeach  
               </div>
             </div>
@@ -93,7 +91,7 @@
             <br>
             <div class="form-group">
               <h5 class="card-title"><b>Descrivi quello di cui hai bisogno, aggiungi informazioni utili</b></h5>
-              <textarea class="form-control" name="details" placeholder="Informazioni utili" rows="3"></textarea>
+              <textarea class="form-control" name="info" placeholder="Informazioni utili" rows="3"></textarea>
             </div>
             <br><br><br>
             <div class="row" style="text-align:center;">

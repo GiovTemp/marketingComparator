@@ -11,6 +11,7 @@ use File;
 use Illuminate\Support\Str;
 use URL;
 
+use App\Http\Resources\EstimateRequestResource;
 
 class AdminController extends Controller
 
@@ -477,7 +478,8 @@ class AdminController extends Controller
 
 
     public function listRequests(){
-        $a = Answer::all()->sortBy('created_at');
+        $paginate = request('paginate',10);
+        $a = Answer::paginate($paginate);
         $i=0;
         while($i<sizeof($a)){
             $p = Promo::find($a[$i]->id_promo);
@@ -487,17 +489,25 @@ class AdminController extends Controller
                 $a[$i]->name_promo = "Promo non trovata";
                 $a[$i]->id_promo = null;
             }
-
-
             $i++;
-        }       
-               
-        return view('admin/estimate/list',['requests' => $a]);
+        } 
+        
+        
+        return EstimateRequestResource::collection($a);       
     }
 
+    public function showListRequests(){
+        return view('admin/estimate/list');
+
+    }    
+
     public function deleteAnswer($id){
-        Answer::find($id)->delete();
-        return redirect('/admin/estimateRequest');
+        try{
+            $flag=Answer::find($id)->delete();           
+        }catch(Throwable $e){
+            return $e;
+        };
+        return true;
     }
 
         /**

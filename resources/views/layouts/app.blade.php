@@ -28,8 +28,10 @@
     </nav>
     <main class="page landing-page">
     
+  
+        @yield('content')
 
-   @yield('content')
+
 
     <script src="{{ URL::asset('homeAssets/assets/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ URL::asset('homeAssets/assets/js/bs-init.js') }}"></script>

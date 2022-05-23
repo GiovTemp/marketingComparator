@@ -64,6 +64,10 @@ Vue.component('box', require('./components/list/Box.vue').default);
 Vue.component('premium-box', require('./components/list/premiumBox.vue').default);
 Vue.component('list', require('./components/list/VueList.vue').default);
 
+Vue.component('estimate-table', require('./components/table/estimateTable.vue').default);
+Vue.component('pagination', require('laravel-vue-pagination'));
+
+
 Vue.config.productionTip = false
 /* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)

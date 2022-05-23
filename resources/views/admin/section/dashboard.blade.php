@@ -53,8 +53,12 @@
                     </td>
                     <td>
                       <div class="text-center">
+                        @if (!$loop->first)
                         <button type="button" class="btn btn-primary"><a style="color:white;" href="{{route('upQuestion',[$q->id,$q->order])}}">Up</a></button>
+                        @endif
+                        @if (!$loop->last)
                         <button type="button" class="btn btn-primary"><a  style="color:white;" href="{{route('downQuestion',[$q->id,$q->order])}}">Down</a></button>
+                        @endif
                       </div>
                     </td>
                   </tr>
