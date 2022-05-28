@@ -20353,15 +20353,19 @@ __webpack_require__.r(__webpack_exports__);
         results: this.results
       }).then(function (response) {
         if (response.data === 1) {
-          alert("Richiesta inoltrata correttamente. Ti chiameremo al più presto.");
+          window.location.href = '/success';
         } else {
+          window.location.href = '/error';
           console.log(response.data);
-          alert("Qualcosa è andato storto. Contatta il webmaster");
         }
       })["catch"](function (error) {
-        alert("Qualcosa è andato storto. Contatta il webmaster");
+        window.location.href = '/error';
         console.log(error.response);
       });
+    },
+    requestEstimate: function requestEstimate(item) {
+      alert(item.title);
+      window.location.href = '/success';
     }
   }
 });
@@ -46734,7 +46738,7 @@ var render = function () {
                           },
                           on: {
                             click: function ($event) {
-                              return _vm.prova(_vm.item.id)
+                              return _vm.requestEstimate(_vm.item)
                             },
                           },
                         },
@@ -49624,7 +49628,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("span", [_vm._v("OR")]),
         _vm._v(" "),
-        _c("button", [_vm._v("Browse File")]),
+        _c("button", { attrs: { type: "button" } }, [_vm._v("Browse File")]),
         _vm._v(" "),
         _c("input", {
           attrs: {

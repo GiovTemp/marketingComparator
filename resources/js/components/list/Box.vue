@@ -34,7 +34,7 @@
                 </div>
                 <div class="d-flex flex-column mt-4">
                     <button class="btn btn-primary" style="margin-top:10px;margin-bottom:10px;" v-on:click="requestCall(item)">Ti chiamiamo noi &nbsp;&nbsp; <font-awesome-icon icon="fa-solid fa-phone" /></button>
-                    <button class="btn btn-success" style="margin-top:10px;margin-bottom:10px;" v-on:click="prova(item.id)">Richiedi preventivo &nbsp;&nbsp; <font-awesome-icon icon="fa-solid fa-envelope" /></button>
+                    <button class="btn btn-success" style="margin-top:10px;margin-bottom:10px;" v-on:click="requestEstimate(item)">Richiedi preventivo &nbsp;&nbsp; <font-awesome-icon icon="fa-solid fa-envelope" /></button>
                 </div>
               </div>
             </div>
@@ -57,15 +57,19 @@ export default {
                     results: this.results
             }).then((response) => {
                 if(response.data===1){
-                  alert("Richiesta inoltrata correttamente. Ti chiameremo al più presto.")
+                  window.location.href = '/success';
                 }else{
+                  window.location.href = '/error';
                   console.log(response.data)
-                  alert("Qualcosa è andato storto. Contatta il webmaster");
                 }
             }).catch((error) => {
-               alert("Qualcosa è andato storto. Contatta il webmaster");
+               window.location.href = '/error';
                console.log(error.response)
             })
+             },
+             requestEstimate(item){
+               alert(item.title)
+               window.location.href = '/success';
              }
          },
 }
