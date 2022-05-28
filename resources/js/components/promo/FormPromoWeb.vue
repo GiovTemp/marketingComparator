@@ -35,7 +35,7 @@
                           <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
                           <h6>Drag & Drop File Here</h6>
                           <span>OR</span>
-                          <button>Browse File</button>
+                          <button type="button">Browse File</button>
                           <input id="image" name="image" type="file" hidden required>
                         </div>
                       </div>
