@@ -20,10 +20,7 @@
                   </div>
 
                       
-                      <div class="form-group">
-                          <label for="score">Score Offerta</label>
-                          <input class="form-control" id="score" type="text" name="score" :value="promo.score" required placeholder="Inserisci score offerrta">
-                                        </div>
+
 
                       <div class="form-group">
                         <div class="contaier-fluid">
@@ -151,6 +148,7 @@
 
 export default {
     props: ['csrf','promo'],
+    name: 'form-promo-app-edit',
 data: () => ({
     infoPrice: {},
   }),

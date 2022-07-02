@@ -93,12 +93,7 @@
                         </div>
                       </div>
                     </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Score</p>
-                        <h6 class="text-sm mb-0"> {{ $premium->score }}</h6>
-                      </div>
-                    </td>
+
                     <td class="align-middle text-sm">
                       <div class="col text-center">
                         <button type="button" class="btn btn-primary" style="background-color: blue;"><a style="color:white;" href="{{route('viewPromo',[$premium->id])}}">View</a></button>
@@ -138,12 +133,7 @@
                         </div>
                       </div>
                     </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Score</p>
-                        <h6 class="text-sm mb-0"> {{ $p->score }}</h6>
-                      </div>
-                    </td>
+
                     <td class="align-middle text-sm">
                       <div class="col text-center">
                         <button type="button" class="btn btn-primary" style="background-color: blue;"><a style="color:white;" href="{{route('viewPromo',[$p->id])}}">View</a></button>

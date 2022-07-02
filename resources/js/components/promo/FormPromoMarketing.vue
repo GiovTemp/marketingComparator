@@ -22,11 +22,7 @@
                     <input class="form-control" id="email" type="text" name="email" placeholder="Inserisci indirizzo email al quale recapitare le richieste" required>
                   
                 </div>
-                      
-                      <div class="form-group">
-                          <label for="score">Score Offerta</label>
-                          <input class="form-control" id="score" type="text" name="score" required placeholder="Inserisci score offerta">
-                                        </div>
+
 
                       <div class="form-group">
                           <label for="image">Immagine Promo</label>
@@ -66,6 +62,7 @@
 
 export default {
     props: ['csrf','section_id'],
+        name: 'form-promo-marketing',
   data: () => ({
     
   }),

@@ -19,6 +19,7 @@ class Question extends Model
         'is_required',
         'order',
         'id_section',
+        'is_price',
         'price'
     ];
 

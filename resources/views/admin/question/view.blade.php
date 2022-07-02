@@ -25,7 +25,6 @@
                 <hr>
                 @foreach ($answers as $a)
                     <div>Testo : {{$a->text}}</div>
-                    <div>Score : {{$a->score}}</div>
                     <hr>
                 @endforeach
 

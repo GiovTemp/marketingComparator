@@ -71,9 +71,9 @@
               <div class="col-lg-8">
                 @foreach (json_decode($q->answers, true) as $a)
                     @if ($q->is_multi==1)
-                    <input type="checkbox" value={{ $loop->index }}|{{$a['score']}}|{{$q->price}} name={{$q->id}}[]> {{$a['text']}}<br>
+                    <input type="checkbox" value={{ $loop->index }}|{{$q->price}} name={{$q->id}}[]> {{$a['text']}}<br>
                     @else
-                    <input type="radio" required={{$q->is_required}} value={{ $loop->index }}|{{$a['score']}}|{{$q->price}} name={{$q->id}}> {{$a['text']}}<br>
+                    <input type="radio" required={{$q->is_required}} value={{ $loop->index }}|{{$q->price}} name={{$q->id}}> {{$a['text']}}<br>
                     @endif
                   @endforeach  
               </div>

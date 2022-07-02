@@ -16,12 +16,6 @@
                     
                 </div>
 
-                
-                <div class="form-group">
-                    <label for="score">Score Offerta</label>
-                    <input class="form-control"  :value="promo.score"  id="score" type="text" name="score" placeholder="Inserisci score offerta" required>
-                </div>
-
                 <div class="form-group">
                     <label for="description">Email autore promo </label>
                     <input class="form-control" :value="promo.email" type="text" name="email" placeholder="Inserisci indirizzo email al quale recapitare le richieste" required>
@@ -191,6 +185,7 @@
 
 export default {
     props: ['csrf','promo'],
+        name: 'form-promo-web-edit',
   data: () => ({
     infoPrice: {},
   }),

@@ -5,20 +5,19 @@
       <FormulateInput type="submit" label="Crea Domanda" />
       <FormulateInput name="title" label="Testo Domanda" validation="required" />
       <FormulateInput name="description" label="Descrizione Domanda" validation="required" />
-      <FormulateInput name="is_required" label="Domanda Obbligatoria"/>
-      <FormulateInput name="is_multi" label="Multirisposta" />
-                  
+      <FormulateInput type="checkbox" name="is_required" label="Domanda Obbligatoria"/>
+      <FormulateInput type="checkbox" name="is_multi" label="Multirisposta" />
+      <FormulateInput type="checkbox" name="is_price" label="Domanda che determina il prezzo" />
+          
     </FormulateForm>
 
     <FormulateForm v-model="answer" @submit="createAnswer">
       <FormulateInput name="text" label="Testo Risposta" validation="required" />
-      <FormulateInput name="score" label="Score Risposta" validation="required" />
       <FormulateInput type="submit" label="Inserisci Risposta" />
     </FormulateForm>
 
     <div v-for="(answer, index) in answersList" :key="answer.text">
       Testo Risposta : {{answer.text}} <br>
-      Score Risposta : {{answer.score}}<br>
       <button class="delete btn btn-primary" style="background-color: red;" @click="deleteAnswer(index)">Elimina Risposta</button>
       <hr>
     </div>
@@ -29,6 +28,7 @@
 import axios from 'axios';
 export default {
   props: ['section_id'],
+   name: 'form-create-question',
   data: () => ({
     formValues: {},
     answersList:[],

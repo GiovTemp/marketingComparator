@@ -48,7 +48,8 @@
 
 <script>
 export default {
-    props:['item','imgSrc','results'],
+      name: 'box',
+      props:['item','imgSrc','results'],
          methods:{
              requestCall(item){
                  axios.post('/requestEstimate', {

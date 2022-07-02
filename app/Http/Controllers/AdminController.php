@@ -64,8 +64,7 @@ class AdminController extends Controller
      */
     public function createQuestion(Request $request){
         
-        //return $request->id_section  ;
-        
+
         $order = Question::max('order');
         
         if($order===null){
@@ -83,15 +82,25 @@ class AdminController extends Controller
                 'id_section' => $request->id_section            
             ]);
 
-            if(isset($request->is_required)){
+            if(isset($request->question_data['is_required'])){
                 $q->is_required = true;
             }
        
-            if(isset($request->is_multi)){
+            if(isset($request->question_data['is_multi'])){
                 $q->is_multi = true;
             }
-
+            
             $q->save();
+  
+            if(isset($request->question_data['is_price'])){
+                $s = Section::find($request->id_section);
+                $q->is_price = true;
+                $temp = explode(" ", $s->title);
+                $q->price = 'price'.'-'.$temp[1].'-'.$q->id; //assegno dinamicamente l'id price
+
+            }                      
+            $q->save();
+
     
         }catch(Throwable $e){
             return $e;
@@ -161,7 +170,19 @@ class AdminController extends Controller
      */
     public function EditQuestion(Request $request){
         try{
-            Question::find($request->question['id'])->update($request->question);
+            $q = Question::find($request->question['id']);
+            $q->update($request->question);
+           
+            if($request->question['is_price']==true){
+                $s = Section::find($q->id_section);
+                $q->price = 'price'.'-'.$s->title.'-'.$q->id;
+            }else{
+                $q->price = null;
+            }
+            $q->save();
+
+            //Todo Ripulire Promo
+
         }catch(Throwable $e){
             return $e;
         }
@@ -186,7 +207,8 @@ class AdminController extends Controller
      * @return void
      */
     public function showCreatePromo($id){
-        return view('admin/promo/create',['id_section' => $id]);
+        $q = Question::where('id_section',$id)->where('is_price',1)->get();
+        return view('admin/promo/create',['id_section' => $id,'questions'=>$q]);
     }
 
 
@@ -197,56 +219,24 @@ class AdminController extends Controller
      */
     public function createPromo(Request $request){
 
+
+        //todo validate
+
         $result =$request->all();
-        
-        $i=1;
 
+        $i=0;
+        $infoPrice = [];
 
+        while($i<sizeof($result['priceInfo'])){
 
-        if($request->id_section==1){
+            $j=0;
 
-            $infoPrice = [
-                'typeWeb' => [],
-                'pricePage' => [],
-                'addService' => [],
-            ];
-            while(isset($result['typeWeb'.$i])){
-                array_push($infoPrice['typeWeb'],$result['typeWeb'.$i]);
-                $i++;
-            }
-            $i=1;
-            while(isset($result['pricePage'.$i])){
-                array_push($infoPrice['pricePage'],$result['pricePage'.$i]);
-                $i++;
-            }
-            $i=1;
-            while(isset($result['addService'.$i])){
-                array_push($infoPrice['addService'],$result['addService'.$i]);
-                $i++;
+            while($j<sizeof($result[$result['priceInfo'][$i]])){
+                $infoPrice[$result['priceInfo'][$i]][$j]=$result[$result['priceInfo'][$i]][$j];
+                $j++;
             }
 
-        }else if($request->id_section==3){
-
-            $infoPrice = [
-                'typeApp' => [],
-                'infoApp' => [],
-                'addService' => [],
-            ];
-            while(isset($result['typeApp'.$i])){
-                array_push($infoPrice['typeApp'],$result['typeApp'.$i]);
-                $i++;
-            }
-            $i=1;
-            while(isset($result['infoApp'.$i])){
-                array_push($infoPrice['infoApp'],$result['infoApp'.$i]);
-                $i++;
-            }
-            $i=1;
-            while(isset($result['addService'.$i])){
-                array_push($infoPrice['addService'],$result['addService'.$i]);
-                $i++;
-            }
-
+            $i++;
         }
 
 
@@ -258,7 +248,6 @@ class AdminController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'email' => $request->email,
-            'score' => $request->score,
             'image' => URL::asset('images').'/'.$newImageName,
             'id_section' => $request->id_section
         ]);
@@ -345,7 +334,8 @@ class AdminController extends Controller
      */
     public function showEditPromo($id){
         $promo = Promo::find($id);
-        return view('admin/promo/edit',['promo' => $promo]);
+        $q = Question::where('id_section',$promo->id_section)->where('is_price',1)->get();
+        return view('admin/promo/edit',['promo' => $promo,'questions'=>$q]);
     }
 
         /**
@@ -355,63 +345,26 @@ class AdminController extends Controller
      */
     public function EditPromo(Request $request){
         $p= Promo::find($request->id);
-        $i=1;
+        $i=0;
         
         $result =$request->all();
  
+        $infoPrice = [];
 
-        if($request->id_section==1){
 
-            $infoPrice = [
-                'typeWeb' => [],
-                'pricePage' => [],
-                'addService' => [],
-            ];
-            while(isset($result['typeWeb'.$i])){
-                array_push($infoPrice['typeWeb'],$result['typeWeb'.$i]);
-                $i++;
-            }
-            $i=1;
-            while(isset($result['pricePage'.$i])){
-                array_push($infoPrice['pricePage'],$result['pricePage'.$i]);
-                $i++;
-            }
-            $i=1;
-            while(isset($result['addService'.$i])){
-                array_push($infoPrice['addService'],$result['addService'.$i]);
-                $i++;
+        while($i<sizeof($result['priceInfo'])){
+
+            $j=0;
+
+            while($j<sizeof($result[$result['priceInfo'][$i]])){
+                $infoPrice[$result['priceInfo'][$i]][$j]=$result[$result['priceInfo'][$i]][$j];
+                $j++;
             }
 
-        }else if($request->id_section==3){
-
-            $infoPrice = [
-                'typeApp' => [],
-                'infoApp' => [],
-                'addService' => [],
-            ];
-            while(isset($result['typeApp'.$i])){
-                array_push($infoPrice['typeApp'],$result['typeApp'.$i]);
-                $i++;
-            }
-            $i=1;
-            while(isset($result['infoApp'.$i])){
-                array_push($infoPrice['infoApp'],$result['infoApp'.$i]);
-                $i++;
-            }
-            $i=1;
-            while(isset($result['addService'.$i])){
-                array_push($infoPrice['addService'],$result['addService'.$i]);
-                $i++;
-            }
-
+            $i++;
         }
-
-
  
-        if(isset($request->price)){
-            $p->price = $request->price;
-        }
-        
+        $p->price =null;
         if(isset($infoPrice)){
             $p->price = json_encode($infoPrice);
         }
@@ -457,7 +410,6 @@ class AdminController extends Controller
         $p->title=$request->title;
         $p->email=$request->email;
         $p->description=$request->description;
-        $p->score=$request->score;
 
         $p->update();  
         return back();

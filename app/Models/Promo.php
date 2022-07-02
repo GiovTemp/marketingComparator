@@ -13,7 +13,6 @@ class Promo extends Model
         'title',
         'email',
         'description',
-        'score',
         'image',
         'price',
         'isPremium',

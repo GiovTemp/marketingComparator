@@ -18,7 +18,6 @@ class Promos extends Migration
             $table->string('title');
             $table->string('email');
             $table->longText('description');
-            $table->string('score');
             $table->string('image');
             $table->longText('price');
             $table->string('promoMessage')->nullable();

@@ -20,6 +20,7 @@ import Box from './Box.vue';
 
 export default {
   components: { Box },
+      name: 'promo-list',
 props:[
         'listdata','results','premium'
     ],

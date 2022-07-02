@@ -74,6 +74,4 @@
      <script src="{{ URL::asset('homeAssets/assets/bootstrap/js/bootstrap.min.js') }}"></script>
 </body>
 </html>
-</body>
 
-</html>

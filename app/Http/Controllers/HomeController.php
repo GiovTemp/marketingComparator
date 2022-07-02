@@ -42,13 +42,15 @@ class HomeController extends Controller
 
 
         $result = $request->all();
+
         
-        $n = sizeof($result) - 4;
-        $score = 0;
+        $n = sizeof($result)-10;
         $i=1;
         $answers = [];
         $infoPrice = [];
         $summary = [];
+
+        
 
         while($i<$n){
 
@@ -58,14 +60,14 @@ class HomeController extends Controller
 
                     while($j<sizeof($result[$i]) ){
 
-                        $temp= explode('|',$result[$i][$j]);                       
-                        $score = $score+$temp[1];
+                        $temp= explode('|',$result[$i][$j]);
+                    
                         array_push($answers,array('question_id' => $i,'answer_id' => $temp[0]));
-                        if($temp[2]!=""){
+                        if($temp[1]!=""){
 
                             $q=Question::find($i);
                             array_push($summary,(array('title'=>$q->title,'answer'=>json_decode($q->answers)[$temp[0]]->text)));
-                            array_push($infoPrice,array('type' => $temp[2],'id_answer' => $temp[0]));
+                            array_push($infoPrice,array('type' => $temp[1],'id_answer' => $temp[0]));
         
                         }
                         $j++;
@@ -73,13 +75,12 @@ class HomeController extends Controller
 
                 }else{
                     $temp= explode('|',$result[$i]);
-                    $score = $score+$temp[1];
                     array_push($answers,array('question_id' => $i,'answer_id' => $temp[0]));
     
-                    if($temp[2]!=""){
+                    if($temp[1]!=""){
                         $q=Question::find($i);
                         array_push($summary,(array('title'=>$q->title,'answer'=>json_decode($q->answers)[$temp[0]]->text)));
-                        array_push($infoPrice,array('type' => $temp[2],'id_answer' => $temp[0]));
+                        array_push($infoPrice,array('type' => $temp[1],'id_answer' => $temp[0]));
     
                     }
     
@@ -93,17 +94,19 @@ class HomeController extends Controller
 
         //get Promos
         $promos = DB::table('promos')
-            ->select('*', DB::raw("Abs(score - $score) AS column_to_be_order"))
+            ->select('*')
             ->where('id_section',$request->id_section)
-            ->orderBy('column_to_be_order')
             ->get();
             
         $premium = Promo::where('isPremium',true)->where('id_section',$request->id_section)->first();
-        
         $i=0;
         $j=0;
         $total=0;
-        if($request->id_section==1 || $request->id_section==3){
+
+        //TODO Controllare calcolo dinamico prezzi
+
+        dd($infoPrice);
+
             while($i<count($promos)){
                 $total=0;
                 $temp = json_decode($promos[$i]->price);
@@ -114,20 +117,25 @@ class HomeController extends Controller
                     $j++;
                 }
                 $promos[$i]->total = $total;
-                if($promos[$i]->id==$premium->id){
-                    $premium->total = $promos[$i]->total;
-                }              
+                if($premium!=null){
+                    if($promos[$i]->id==$premium->id){
+                        $premium->total = $promos[$i]->total;
+                    }        
+                }
+      
                 $i++;
             }
-        }else{
+
             while($i<count($promos)){
                 $promos[$i]->total =$promos[$i]->price;
-                if($promos[$i]->id==$premium->id){
-                    $premium->total = $promos[$i]->total;
+                if($premium!=null){
+                    if($promos[$i]->id==$premium->id){
+                        $premium->total = $promos[$i]->total;
+                    }
                 }                 
                 $i++;
             }
-        }
+    
       
 
 
@@ -137,6 +145,9 @@ class HomeController extends Controller
 
         $result['answers'] = json_encode($answers);
         $promo = array($promos);
+        
+        //TODO Controllare se premium == null
+
         return view('listResultsPromo',['premium' => $premium,'promos' => json_encode($promos),'summary'=>json_encode($summary),'results' => json_encode($result)]);
 
        

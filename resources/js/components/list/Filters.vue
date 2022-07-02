@@ -64,5 +64,7 @@
 <script>
 export default {
     props:['summary'],
+    name: 'filters',
+
 }
 </script>

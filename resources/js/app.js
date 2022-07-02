@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+ require('./bootstrap');
 
 import VueFormulate from '@braid/vue-formulate'
 
@@ -87,3 +87,6 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 const app = new Vue({
     el: '#app',
 });
+ 
+
+

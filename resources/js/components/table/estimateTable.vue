@@ -71,6 +71,7 @@
 <script>
 import axios from 'axios';
 export default {
+    name: 'estimate-table',
     data(){
         return {
             list:[],

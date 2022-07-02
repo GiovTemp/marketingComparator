@@ -22,10 +22,7 @@
                       
 
                       
-                      <div class="form-group">
-                          <label for="score">Score Offerta</label>
-                          <input class="form-control" :value="promo.score" id="score" type="text" name="score" required placeholder="Inserisci score offerta">
-                                        </div>
+
                       <div class="form-group">
                         <div class="contaier-fluid">
                           <div class="row">
@@ -73,6 +70,7 @@
 
 export default {
     props: ['csrf','section_id','promo'],
+        name: 'form-promo-marketing-edit',
   data: () => ({
     
   }),

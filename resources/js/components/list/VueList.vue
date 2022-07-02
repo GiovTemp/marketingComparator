@@ -15,7 +15,7 @@
 import Filters from './Filters.vue'
 import PromoList from './PromoList.vue'
 export default {
-
+    name: 'list',
     components: {
         Filters,
         PromoList
